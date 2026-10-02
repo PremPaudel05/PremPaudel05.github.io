@@ -41,7 +41,6 @@ export function GlowCard({
   useEffect(() => {
     const syncPointer = (event: PointerEvent) => {
       if (!cardRef.current) return;
-
       const { clientX: x, clientY: y } = event;
       cardRef.current.style.setProperty("--x", x.toFixed(2));
       cardRef.current.style.setProperty("--xp", (x / window.innerWidth).toFixed(2));
@@ -56,13 +55,7 @@ export function GlowCard({
   const style = {
     "--base": base,
     "--spread": spread,
-    "--radius": "18",
-    "--border": "1",
-    "--backdrop": "hsl(222 18% 10% / 0.7)",
-    "--backup-border": "hsl(0 0% 100% / 0.10)",
     "--size": "240",
-    "--outer": "1",
-    "--border-size": "calc(var(--border) * 1px)",
     "--spotlight-size": "calc(var(--size) * 1px)",
     "--hue": "calc(var(--base) + (var(--xp, 0) * var(--spread)))",
     width: width === undefined ? undefined : typeof width === "number" ? `${width}px` : width,
@@ -74,14 +67,14 @@ export function GlowCard({
       ref={cardRef}
       data-glow
       style={style}
-      className={`${customSize ? "" : sizeMap[size]} group relative overflow-hidden rounded-[18px] border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl ${className}`}
+      className={`${customSize ? "" : sizeMap[size]} group relative overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.055] p-6 shadow-xl shadow-black/10 backdrop-blur-xl ${className}`}
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background:
-            "radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px), hsl(var(--hue) 95% 68% / 0.16), transparent 60%)",
+            "radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px), hsl(var(--hue) 90% 72% / 0.14), transparent 62%)",
           backgroundAttachment: "fixed",
         }}
       />
