@@ -11,7 +11,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import { AnimatedLetterText } from "@/components/ui/potfolio-text";
 import graduationPhoto from "@/public/images/prem-graduation.jpg";
 
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
@@ -72,10 +71,6 @@ export default function Home() {
     <main>
       <nav className="fixed inset-x-0 top-4 z-50 px-4">
         <div className="mx-auto flex max-w-6xl items-center rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 shadow-sm shadow-slate-200/40 backdrop-blur-xl sm:px-5">
-          <a href="#" className="text-sm font-semibold tracking-tight text-slate-950">
-            Prem Paudel
-          </a>
-
           <div className="ml-auto hidden items-center gap-1 text-sm text-slate-600 md:flex">
             <a className="nav-link" href="#about">About</a>
             <a className="nav-link" href="#education">Education</a>
@@ -84,7 +79,7 @@ export default function Home() {
             <a className="nav-link" href="#skills">Skills</a>
           </div>
 
-          <a href="#contact" className="ml-auto rounded-xl border border-teal-200 bg-teal-50/80 px-4 py-2 text-sm font-medium text-teal-800 transition hover:border-teal-300 hover:bg-teal-100 md:ml-3">
+          <a href="#contact" className="ml-auto rounded-xl border border-indigo-200 bg-indigo-50/80 px-4 py-2 text-sm font-medium text-indigo-800 transition hover:border-indigo-300 hover:bg-indigo-100 md:ml-3">
             Contact
           </a>
         </div>
@@ -94,13 +89,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
           <div className="min-w-0">
             <div className="mb-7 flex items-center gap-4">
-              <AnimatedLetterText text="Portfolio" className="text-2xl sm:text-3xl" />
-              <span aria-hidden="true" className="h-px w-12 bg-teal-200" />
+              <p className="text-sm font-medium tracking-[0.16em] text-slate-500">My Portfolio</p>
+              <span aria-hidden="true" className="h-px w-12 bg-indigo-200" />
             </div>
-            <h1 className="text-4xl font-semibold leading-[1.1] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-6xl">
-              Hi, I&apos;m <span className="block text-teal-700">Prem Paudel</span>
+            <h1 className="text-[2.5rem] font-medium leading-[1.12] tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
+              Hello, I&apos;m <span className="mt-1 block font-semibold text-indigo-800">Prem Paudel</span>
             </h1>
-            <p className="mt-5 text-lg font-semibold text-indigo-600 lg:text-xl">
+            <p className="mt-5 text-lg font-medium tracking-[-0.015em] text-slate-600 lg:text-xl">
               Information Systems · Management
             </p>
             <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
