@@ -24,7 +24,7 @@ export default function CodeBackground() {
     let dpr = 1;
     let last = performance.now();
 
-    const spacing = 28;
+    const spacing = 30;
 
     const resize = () => {
       width = canvas.clientWidth;
@@ -52,20 +52,20 @@ export default function CodeBackground() {
           const dx = x - pointer.x;
           const dy = y - pointer.y;
           const dist = Math.hypot(dx, dy);
-          const influence = Math.max(0, 1 - dist / 190);
+          const influence = Math.max(0, 1 - dist / 210);
           const seed = Math.abs(Math.sin(x * 0.017 + y * 0.013));
-          const showGlyph = influence > 0.18 && seed > 0.55;
+          const showGlyph = influence > 0.2 && seed > 0.58;
 
           if (showGlyph) {
             const index = Math.floor((x * 7 + y * 11 + now * 0.012) % glyphs.length);
-            ctx.globalAlpha = 0.12 + influence * 0.35;
-            ctx.fillStyle = influence > 0.65 ? "#8ea7ff" : "#71809d";
+            ctx.globalAlpha = 0.08 + influence * 0.22;
+            ctx.fillStyle = influence > 0.62 ? "#6366f1" : "#94a3b8";
             ctx.fillText(glyphs[index], x, y);
           } else {
-            ctx.globalAlpha = 0.08 + influence * 0.12;
-            ctx.fillStyle = "#8b98aa";
+            ctx.globalAlpha = 0.05 + influence * 0.08;
+            ctx.fillStyle = "#94a3b8";
             ctx.beginPath();
-            ctx.arc(x, y, 1.05, 0, Math.PI * 2);
+            ctx.arc(x, y, 1, 0, Math.PI * 2);
             ctx.fill();
           }
         }
