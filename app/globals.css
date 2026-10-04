@@ -90,3 +90,19 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
   .nav-link { padding: .6rem .25rem; font-size: .64rem; }
   .nav-contact { padding: .55rem .5rem; font-size: .64rem; }
 }
+
+.nav-link[aria-current="location"] {
+  background: #eee5d9;
+  color: #654b37;
+  box-shadow: inset 0 -2px 0 #8a6245;
+}
+.nav-contact[aria-current="location"] {
+  background: #654b37;
+  border-color: #654b37;
+  color: #fffdf8;
+}
+.about-quote {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #e5e1d9;
+}

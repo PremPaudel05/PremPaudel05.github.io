@@ -20,6 +20,8 @@ import {
   Store,
   Wrench,
 } from "lucide-react";
+import { SectionNavigation } from "@/components/ui/section-navigation";
+import voyaPreview from "@/public/images/voya-world-preview.png";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import graduationPhoto from "@/public/images/prem-graduation.jpg";
 
@@ -38,6 +40,7 @@ const projects = [
     icon: Globe2,
     color: "neutral" as const,
     href: "https://voyatravel.vercel.app/",
+    image: voyaPreview,
     status: "Live",
   },
   {
@@ -48,19 +51,21 @@ const projects = [
     tags: ["React", "UI/UX", "Product Thinking"],
     icon: IdCard,
     color: "neutral" as const,
-    href: "https://github.com/bjkc01/digicard",
+    href: "https://getmycard.vercel.app/",
+    image: null,
     status: "Building",
   },
   {
     title: "ZipShade",
-    eyebrow: "Campus mapping concept",
+    eyebrow: "Campus shadow mapping",
     description:
       "An interactive campus mapping idea that estimates where building shadows move throughout the day using location, time, and geometry.",
     tags: ["Mapping", "Data", "Prototyping"],
     icon: Sun,
     color: "neutral" as const,
-    href: "#contact",
-    status: "Concept",
+    href: null,
+    image: null,
+    status: "Planned",
   },
 ];
 
@@ -107,21 +112,7 @@ export default function Home() {
   return (
     <main>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <nav aria-label="Main navigation" className="site-nav">
-        <div className="nav-inner">
-          <div className="flex items-center gap-1 text-sm text-stone-600">
-            <a className="nav-link" href="#about">About</a>
-            <a className="nav-link" href="#education">Education</a>
-            <a className="nav-link" href="#experience">Experience</a>
-            <a className="nav-link" href="#projects">Projects</a>
-            <a className="nav-link" href="#skills">Skills</a>
-          </div>
-
-          <a href="#contact" className="nav-contact">
-            Contact
-          </a>
-        </div>
-      </nav>
+      <SectionNavigation />
 
       <section id="main-content" className="hero-simple pb-16 pt-32 sm:pb-24 sm:pt-40">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
@@ -139,8 +130,9 @@ export default function Home() {
             </p>
             <p className="mt-6 max-w-xl text-base leading-8 text-stone-600 sm:text-lg">
               I&apos;m interested in project management, web development, and bringing
-              business and technology together. I enjoy working with a team, taking
-              on leadership opportunities, and continuing to learn about AI and machine learning.
+              business and technology together. I enjoy working in a team-oriented environment,
+              taking on leadership opportunities, and continuing to learn how rapidly evolving
+              technology, AI, and machine learning shape businesses and the way we work.
             </p>
             <div className="mt-6 flex max-w-xl flex-wrap gap-2">
               <span className="hero-chip">IT Project Management</span>
@@ -151,9 +143,8 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="primary-button"><Download size={16} /> View résumé</a>
-              <a href={`mailto:${email}`} className="secondary-button"><Mail size={16} /> Get in touch</a>
+              <a href="#contact" className="secondary-button"><Mail size={16} /> Get in touch</a>
             </div>
-            <p className="mt-3 flex items-center gap-2 text-xs text-stone-500"><Clock3 size={13} /> I usually reply within 24 hours.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
               <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
@@ -186,23 +177,26 @@ export default function Home() {
             </div>
             <div>
               <p className="text-lg leading-8 text-stone-700">
-                I&apos;m an Information Systems Management student who wants to help teams
-                turn business needs into useful technology. Through coursework and personal
-                projects, I&apos;m learning to design relational databases, write SQL and Python,
+                I&apos;m an Information Systems Management student at the University of Akron
+                who wants to help teams turn business needs into technology people can trust.
+                Through coursework and projects like Voya, a travel platform I built with
+                JavaScript, TypeScript, and AI APIs, I&apos;m learning to design clear interfaces,
                 build web applications, and use spreadsheets to support decisions.
               </p>
               <p className="mt-5 leading-7 text-stone-600">
                 What interests me most is the work around the technology: understanding what
                 people need, breaking a problem into manageable tasks, and making technical
-                information clear to the people using it. I value clear communication,
-                shared responsibility, and following through on commitments.
+                information clear to the people using it. I&apos;ve worked in high-volume,
+                process-driven environments where accuracy and accountability matter, and
+                I value clear communication, shared responsibility, and following through on commitments.
               </p>
               <div className="mt-6 border-l-2 border-stone-200 pl-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">Where I want to contribute</p>
                 <p className="mt-2 text-sm leading-7 text-stone-600">
                   I&apos;m looking for opportunities in IT project coordination, business analysis,
-                  and information systems where I can work with a team, help manage projects,
-                  and grow into leadership responsibilities.
+                  and information systems within large, structured organizations where careful
+                  work and dependable systems matter. I want to work with a team, help manage
+                  projects, and grow into leadership responsibilities.
                 </p>
               </div>
             </div>
@@ -224,6 +218,18 @@ export default function Home() {
               <p className="mt-2 text-sm leading-6 text-stone-500">Listen carefully, ask questions, and explain technical ideas in language teammates can act on.</p>
             </div>
           </div>
+          <div className="about-quote">
+            <p className="max-w-2xl text-sm leading-7 text-stone-600">
+              That&apos;s why I care about how systems are designed: the tools and processes
+              we build influence how people work together.
+            </p>
+            <figure className="mt-5">
+              <blockquote className="font-serif text-xl italic leading-relaxed text-stone-800 sm:text-2xl">
+                &ldquo;We shape our buildings; thereafter they shape us.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-xs font-semibold tracking-wide text-accent">Winston Churchill</figcaption>
+            </figure>
+          </div>
         </section>
 
         <section id="education" className="content-card scroll-mt-28">
@@ -240,10 +246,6 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-stone-950">University of Akron</h3>
                 <p className="mt-2 text-sm font-semibold text-accent">Bachelor of Business Administration (BBA)</p>
                 <p className="mt-1 text-sm font-medium text-stone-700">Information Systems Management</p>
-                <p className="mt-4 max-w-2xl text-sm leading-6 text-stone-600">
-                  Building a foundation in information systems, applied AI, spreadsheet modeling,
-                  management, accounting, and business communication.
-                </p>
               </div>
               <div className="flex shrink-0 flex-wrap items-center gap-3 sm:flex-col sm:items-end">
                 <span className="text-sm font-medium text-stone-500">Class of 2028</span>
@@ -271,7 +273,6 @@ export default function Home() {
               <p className="section-label">03 / Experience</p>
               <h2 className="section-title">Learning by showing up.</h2>
             </div>
-            <p className="section-note">Hands-on work. Shared responsibility.<br />Experience that carries into every project.</p>
           </div>
           <div className="experience-list">
             <article className="experience-entry">
@@ -323,9 +324,6 @@ export default function Home() {
               <p className="section-label">04 / Selected work</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Ideas put into practice.</h2>
             </div>
-            <p className="max-w-sm text-sm leading-6 text-stone-500">
-              Projects where I&apos;ve been learning by planning, designing, coding, and iterating.
-            </p>
           </div>
 
           <div className="grid gap-5 lg:grid-cols-3">
@@ -334,34 +332,39 @@ export default function Home() {
                 key={project.title}
                 glowColor={project.color}
                 customSize
-                className="min-h-[410px] w-full"
+                className="h-full min-h-[450px] w-full"
               >
-                <a href={project.href} className="flex h-full flex-col">
+                <article className="flex h-full flex-col" aria-label={project.title}>
                   <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <span className="project-symbol"><project.icon size={28} strokeWidth={1.5} /></span>
-                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-accent">
-                        {project.eyebrow}
-                      </p>
-                    </div>
+                    <span className="project-symbol"><project.icon size={28} strokeWidth={1.5} /></span>
                     <span className="status-pill">{project.status}</span>
                   </div>
-
-                  <div className="mt-auto">
-                    <h3 className="text-2xl font-semibold tracking-[-0.025em] text-stone-950">
-                      {project.title}
-                    </h3>
+                  {project.image && (
+                    <img
+                      src={project.image.src}
+                      width={project.image.width}
+                      height={project.image.height}
+                      alt="Voya World homepage featuring country guides and an interactive world map"
+                      loading="lazy"
+                      className="mt-5 aspect-[1347/777] w-full rounded-lg border border-stone-200 object-contain"
+                    />
+                  )}
+                  <div className="mt-6">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">{project.eyebrow}</p>
+                    <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-stone-950">{project.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-stone-600">{project.description}</p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="project-tag">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-stone-800">
-                      {project.status === "Concept" ? "Discuss the idea" : "Explore project"} <ArrowUpRight size={16} />
-                    </div>
                   </div>
-                </a>
+                  <div className="mt-auto pt-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
+                    </div>
+                    {project.href && (
+                      <a href={project.href} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
+                        Explore project <ArrowUpRight size={16} />
+                      </a>
+                    )}
+                  </div>
+                </article>
               </GlowCard>
             ))}
           </div>
