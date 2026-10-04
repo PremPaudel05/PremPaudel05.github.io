@@ -242,3 +242,21 @@ a.social-pill:hover {
 .hero-simple img {
   display: block;
 }
+
+@theme inline {
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+}
+
+@keyframes diamond-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.animate-diamond-rotate {
+  transform-origin: center;
+  animation: diamond-rotate 10s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-diamond-rotate { animation: none; }
+}

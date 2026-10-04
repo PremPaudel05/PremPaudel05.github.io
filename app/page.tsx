@@ -1,5 +1,4 @@
 import {
-  ArrowDownRight,
   ArrowUpRight,
   BriefcaseBusiness,
   Code2,
@@ -12,7 +11,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import { profileImage } from "@/lib/profile-image";
+import { AnimatedLetterText } from "@/components/ui/potfolio-text";
+import graduationPhoto from "@/public/images/prem-graduation.jpg";
 
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
 
@@ -84,63 +84,58 @@ export default function Home() {
             <a className="nav-link" href="#skills">Skills</a>
           </div>
 
-          <a href="#contact" className="ml-3 rounded-xl bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800">
+          <a href="#contact" className="ml-auto rounded-xl border border-teal-200 bg-teal-50/80 px-4 py-2 text-sm font-medium text-teal-800 transition hover:border-teal-300 hover:bg-teal-100 md:ml-3">
             Contact
           </a>
         </div>
       </nav>
 
-      <section className="hero-simple pt-32">
-        <div className="mx-auto max-w-5xl px-6 py-20 text-center sm:py-24">
-          <div className="mx-auto mb-7 w-fit rounded-full border-[5px] border-slate-200 bg-white p-1 shadow-sm">
-            <img
-              src={profileImage}
-              alt="Prem Paudel"
-              className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36"
-            />
+      <section className="hero-simple pb-16 pt-32 sm:pb-20 sm:pt-40">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
+          <div className="min-w-0">
+            <div className="mb-7 flex items-center gap-4">
+              <AnimatedLetterText text="Portfolio" className="text-2xl sm:text-3xl" />
+              <span aria-hidden="true" className="h-px w-12 bg-teal-200" />
+            </div>
+            <h1 className="text-4xl font-semibold leading-[1.1] tracking-[-0.04em] text-slate-950 sm:text-5xl lg:text-6xl">
+              Hi, I&apos;m <span className="block text-teal-700">Prem Paudel</span>
+            </h1>
+            <p className="mt-5 text-lg font-semibold text-indigo-600 lg:text-xl">
+              Information Systems · Management
+            </p>
+            <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">
+              I&apos;m interested in project management, web development, and bringing
+              business and technology together. I enjoy working with a team, taking
+              on leadership opportunities, and continuing to learn about AI and machine learning.
+            </p>
+            <div className="mt-6 flex max-w-xl flex-wrap gap-2">
+              <span className="hero-chip">IT Project Management</span>
+              <span className="hero-chip">Leadership &amp; Teamwork</span>
+              <span className="hero-chip">AI &amp; Machine Learning</span>
+              <span className="hero-chip">Web Development</span>
+              <span className="hero-chip">Business + Technology</span>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#" className="primary-button">Resume <ArrowUpRight size={16} /></a>
+              <a href="#contact" className="secondary-button"><Mail size={16} /> Get in touch</a>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
+              <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
+              <span className="social-pill"><MapPin size={16} /> Akron, Ohio</span>
+            </div>
           </div>
-
-          <h1 className="text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-6xl">
-            Hi, I&apos;m <span className="text-teal-700">Prem Paudel</span>
-          </h1>
-
-          <p className="mt-4 text-xl font-semibold text-indigo-600 sm:text-2xl">
-            Information Systems · Management
-          </p>
-
-          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            I&apos;m interested in technology, databases, project management, product thinking,
-            and building practical digital experiences that connect technical ideas with real
-            business needs.
-          </p>
-
-          <div className="mx-auto mt-7 flex max-w-3xl flex-wrap justify-center gap-2">
-            <span className="hero-chip">IT Project Management</span>
-            <span className="hero-chip">Business Systems</span>
-            <span className="hero-chip">Databases & SQL</span>
-            <span className="hero-chip">Web Development</span>
-            <span className="hero-chip">Product Thinking</span>
-          </div>
-
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <a href="#" className="primary-button">
-              Resume <ArrowUpRight size={16} />
-            </a>
-            <a href="#contact" className="secondary-button">
-              <Mail size={16} /> Get in touch
-            </a>
-          </div>
-
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <a className="social-pill" href="https://github.com/PremPaudel05">
-              <Github size={16} /> GitHub
-            </a>
-            <a className="social-pill" href={linkedinUrl}>
-              <Linkedin size={16} /> LinkedIn
-            </a>
-            <span className="social-pill">
-              <MapPin size={16} /> Akron, Ohio
-            </span>
+          <div className="w-full max-w-sm justify-self-center md:justify-self-end">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-2 shadow-[0_18px_48px_-30px_rgba(15,23,42,0.3)]">
+              <img
+                src={graduationPhoto.src}
+                alt="Prem Paudel wearing his graduation cap"
+                width={1254}
+                height={1254}
+                fetchPriority="high"
+                className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </section>
