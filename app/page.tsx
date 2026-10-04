@@ -12,7 +12,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import CodeBackground from "@/components/ui/code-background";
 import { profileImage } from "@/lib/profile-image";
 
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
@@ -91,69 +90,57 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-28">
-        <CodeBackground />
-        <div className="hero-orb absolute right-[8%] top-[20%] h-[34rem] w-[34rem] rounded-full blur-3xl" />
-
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-6 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
-          <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-              Building, learning, and exploring what&apos;s next
-            </div>
-
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">
-              Information Systems · Management
-            </p>
-
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] text-slate-950 sm:text-7xl lg:text-[5.8rem]">
-              I build where
-              <span className="block text-slate-400">business meets technology.</span>
-            </h1>
-
-            <p className="mt-8 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-              I&apos;m Prem, an Information Systems student interested in product,
-              databases, project management, and building useful digital experiences
-              that connect technology with real business problems.
-            </p>
-
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#projects" className="primary-button">
-                View my work <ArrowDownRight size={16} />
-              </a>
-              <a href="#" className="secondary-button">
-                Resume <ArrowUpRight size={16} />
-              </a>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a className="social-pill" href="https://github.com/PremPaudel05">
-                <Github size={16} /> GitHub
-              </a>
-              <a className="social-pill" href={linkedinUrl}>
-                <Linkedin size={16} /> LinkedIn
-              </a>
-              <span className="social-pill">
-                <MapPin size={16} /> Akron, Ohio
-              </span>
-            </div>
+      <section className="hero-simple pt-32">
+        <div className="mx-auto max-w-5xl px-6 py-20 text-center sm:py-24">
+          <div className="mx-auto mb-7 w-fit rounded-full border-[5px] border-slate-200 bg-white p-1 shadow-sm">
+            <img
+              src={profileImage}
+              alt="Prem Paudel"
+              className="h-32 w-32 rounded-full object-cover sm:h-36 sm:w-36"
+            />
           </div>
 
-          <div className="relative mx-auto w-full max-w-[390px] lg:mx-0 lg:ml-auto">
-            <div className="profile-halo absolute -inset-10 rounded-[2.5rem] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-[0_28px_70px_-30px_rgba(15,23,42,0.35)]">
-              <img
-                src={profileImage}
-                alt="Prem Paudel wearing a graduation cap"
-                className="aspect-square w-full rounded-[1.55rem] object-cover"
-              />
-            </div>
-            <div className="relative mx-5 -mt-8 rounded-2xl border border-slate-200 bg-white/90 px-5 py-4 shadow-xl shadow-slate-200/60 backdrop-blur-xl">
-              <p className="text-sm font-semibold text-slate-950">Prem Paudel</p>
-              <p className="mt-1 text-xs leading-5 text-slate-500">
-                Information Systems · Management
-              </p>
-            </div>
+          <h1 className="text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-6xl">
+            Hi, I&apos;m <span className="text-teal-700">Prem Paudel</span>
+          </h1>
+
+          <p className="mt-4 text-xl font-semibold text-indigo-600 sm:text-2xl">
+            Information Systems · Management
+          </p>
+
+          <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+            I&apos;m interested in technology, databases, project management, product thinking,
+            and building practical digital experiences that connect technical ideas with real
+            business needs.
+          </p>
+
+          <div className="mx-auto mt-7 flex max-w-3xl flex-wrap justify-center gap-2">
+            <span className="hero-chip">IT Project Management</span>
+            <span className="hero-chip">Business Systems</span>
+            <span className="hero-chip">Databases & SQL</span>
+            <span className="hero-chip">Web Development</span>
+            <span className="hero-chip">Product Thinking</span>
+          </div>
+
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
+            <a href="#" className="primary-button">
+              Resume <ArrowUpRight size={16} />
+            </a>
+            <a href="#contact" className="secondary-button">
+              <Mail size={16} /> Get in touch
+            </a>
+          </div>
+
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+            <a className="social-pill" href="https://github.com/PremPaudel05">
+              <Github size={16} /> GitHub
+            </a>
+            <a className="social-pill" href={linkedinUrl}>
+              <Linkedin size={16} /> LinkedIn
+            </a>
+            <span className="social-pill">
+              <MapPin size={16} /> Akron, Ohio
+            </span>
           </div>
         </div>
       </section>
