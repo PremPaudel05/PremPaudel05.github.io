@@ -16,10 +16,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 82% 10%, rgba(199, 210, 254, 0.42), transparent 30rem),
-    radial-gradient(circle at 10% 18%, rgba(224, 231, 255, 0.46), transparent 26rem),
-    linear-gradient(180deg, #fbfdff 0%, #f8fafc 44%, #f1f5f9 100%);
+  background: #f8fafc;
   color: var(--foreground);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-rendering: optimizeLegibility;
@@ -33,40 +30,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.code-background {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: auto;
-  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 97%);
-}
-
-.code-background-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  opacity: 0.82;
-}
-
-.code-background-fade {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 27% 43%, rgba(248, 250, 252, 0.1), rgba(248, 250, 252, 0.48) 54%, rgba(248, 250, 252, 0.78) 100%);
-}
-
-.hero-orb {
-  pointer-events: none;
-  background:
-    radial-gradient(circle, rgba(129, 140, 248, 0.2), rgba(167, 139, 250, 0.08) 44%, transparent 70%);
-}
-
-.profile-halo {
-  background:
-    radial-gradient(circle at 50% 40%, rgba(165, 180, 252, 0.34), rgba(196, 181, 253, 0.16) 58%, transparent 78%);
 }
 
 .nav-link {
@@ -260,4 +223,22 @@ a.social-pill:hover {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+.hero-simple {
+  background: #f8fafc;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgb(240 253 250);
+  color: rgb(15 118 110);
+  padding: 0.42rem 0.72rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero-simple img {
+  display: block;
 }
