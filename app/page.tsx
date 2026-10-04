@@ -2,10 +2,14 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   BriefcaseBusiness,
+  Code2,
+  Database,
   Github,
+  GraduationCap,
   Linkedin,
   Mail,
   MapPin,
+  Sparkles,
 } from "lucide-react";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import CodeBackground from "@/components/ui/code-background";
@@ -16,135 +20,137 @@ const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
 const projects = [
   {
     title: "Voya World",
+    eyebrow: "Travel & culture platform",
     description:
-      "A travel and culture platform exploring how people discover countries, culture, and useful destination context.",
+      "A web experience for discovering countries, culture, and useful destination context while I learn modern full-stack product development.",
     tags: ["Next.js", "TypeScript", "Product Design"],
     color: "blue" as const,
     href: "https://voyatravel.vercel.app/",
+    status: "Live",
   },
   {
     title: "DigiCard",
+    eyebrow: "Digital networking",
     description:
-      "A digital networking card concept for sharing professional information quickly through a polished mobile-first experience.",
-    tags: ["React", "UI/UX", "Full-stack learning"],
+      "A mobile-first digital networking card concept designed to make sharing professional information faster and more polished.",
+    tags: ["React", "UI/UX", "Product Thinking"],
     color: "purple" as const,
     href: "https://github.com/bjkc01/digicard",
+    status: "Building",
   },
   {
     title: "ZipShade",
+    eyebrow: "Campus mapping concept",
     description:
-      "An interactive campus mapping concept that estimates where building shadows move throughout the day.",
+      "An interactive campus mapping idea that estimates where building shadows move throughout the day using location, time, and geometry.",
     tags: ["Mapping", "Data", "Prototyping"],
     color: "green" as const,
     href: "#",
+    status: "Concept",
   },
 ];
 
-const skills = [
-  "Python",
-  "SQL",
-  "TypeScript",
-  "JavaScript",
-  "React",
-  "Next.js",
-  "GitHub",
-  "Oracle Data Modeler",
-  "Excel",
-  "Microsoft 365",
-  "Linux",
+const skillGroups = [
+  {
+    title: "Programming & Data",
+    icon: Code2,
+    skills: ["Python", "SQL", "JavaScript", "TypeScript"],
+  },
+  {
+    title: "Web & Product",
+    icon: Sparkles,
+    skills: ["React", "Next.js", "Tailwind CSS", "GitHub"],
+  },
+  {
+    title: "Systems & Analytics",
+    icon: Database,
+    skills: ["Oracle Data Modeler", "Excel", "Linux", "Microsoft 365"],
+  },
 ];
 
 export default function Home() {
   return (
     <main>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-[#151922]/82 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center px-6 py-4">
-          <a href="#" className="text-sm font-semibold tracking-tight text-white">
+      <nav className="fixed inset-x-0 top-4 z-50 px-4">
+        <div className="mx-auto flex max-w-6xl items-center rounded-2xl border border-slate-200/80 bg-white/80 px-4 py-3 shadow-sm shadow-slate-200/40 backdrop-blur-xl sm:px-5">
+          <a href="#" className="text-sm font-semibold tracking-tight text-slate-950">
             Prem Paudel
           </a>
 
-          <div className="ml-auto hidden items-center gap-7 text-sm text-slate-300 md:flex">
-            <a className="transition hover:text-white" href="#about">About</a>
-            <a className="transition hover:text-white" href="#experience">Experience</a>
-            <a className="transition hover:text-white" href="#projects">Projects</a>
-            <a className="transition hover:text-white" href="#skills">Skills</a>
+          <div className="ml-auto hidden items-center gap-1 text-sm text-slate-600 md:flex">
+            <a className="nav-link" href="#about">About</a>
+            <a className="nav-link" href="#education">Education</a>
+            <a className="nav-link" href="#experience">Experience</a>
+            <a className="nav-link" href="#projects">Projects</a>
+            <a className="nav-link" href="#skills">Skills</a>
           </div>
 
-          <a
-            href="mailto:"
-            className="ml-6 rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm text-slate-100 transition hover:border-white/25 hover:bg-white/[0.08]"
-          >
+          <a href="#contact" className="ml-3 rounded-xl bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800">
             Contact
           </a>
         </div>
       </nav>
 
-      <section className="relative flex min-h-screen items-center overflow-hidden pt-24">
+      <section className="relative flex min-h-screen items-center overflow-hidden pt-28">
         <CodeBackground />
-        <div className="hero-orb absolute left-[58%] top-[28%] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full blur-3xl" />
+        <div className="hero-orb absolute right-[8%] top-[20%] h-[34rem] w-[34rem] rounded-full blur-3xl" />
 
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-6 py-24 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-6 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
           <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3 py-1.5 text-xs text-slate-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              Open to building, learning, and new opportunities
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-white/80 px-3 py-1.5 text-xs font-medium text-slate-600 shadow-sm backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              Building, learning, and exploring what&apos;s next
             </div>
 
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.22em] text-slate-400">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">
               Information Systems · Management
             </p>
 
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] text-white sm:text-7xl lg:text-[5.9rem]">
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.96] tracking-[-0.055em] text-slate-950 sm:text-7xl lg:text-[5.8rem]">
               I build where
               <span className="block text-slate-400">business meets technology.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+            <p className="mt-8 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
               I&apos;m Prem, an Information Systems student interested in product,
-              technology, databases, project management, and turning ideas into useful
-              experiences.
+              databases, project management, and building useful digital experiences
+              that connect technology with real business problems.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-slate-200"
-              >
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a href="#projects" className="primary-button">
                 View my work <ArrowDownRight size={16} />
               </a>
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.03] px-5 py-3 text-sm font-medium text-slate-100 transition hover:border-white/25 hover:bg-white/[0.07]"
-              >
+              <a href="#" className="secondary-button">
                 Resume <ArrowUpRight size={16} />
               </a>
             </div>
 
-            <div className="mt-14 flex flex-wrap items-center gap-5 text-sm text-slate-400">
-              <a className="inline-flex items-center gap-2 hover:text-white" href="https://github.com/PremPaudel05">
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a className="social-pill" href="https://github.com/PremPaudel05">
                 <Github size={16} /> GitHub
               </a>
-              <a className="inline-flex items-center gap-2 hover:text-white" href={linkedinUrl}>
+              <a className="social-pill" href={linkedinUrl}>
                 <Linkedin size={16} /> LinkedIn
               </a>
-              <span className="inline-flex items-center gap-2">
+              <span className="social-pill">
                 <MapPin size={16} /> Akron, Ohio
               </span>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-[390px] lg:mx-0 lg:ml-auto">
-            <div className="profile-halo absolute -inset-8 rounded-[2.2rem] blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/14 bg-white/[0.06] p-2 shadow-2xl shadow-black/20 backdrop-blur-xl">
+            <div className="profile-halo absolute -inset-10 rounded-[2.5rem] blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white bg-white p-2 shadow-[0_28px_70px_-30px_rgba(15,23,42,0.35)]">
               <img
                 src={profileImage}
                 alt="Prem Paudel wearing a graduation cap"
                 className="aspect-square w-full rounded-[1.55rem] object-cover"
               />
             </div>
-            <div className="relative mx-5 -mt-8 rounded-2xl border border-white/12 bg-[#202633]/88 px-5 py-4 shadow-xl backdrop-blur-xl">
-              <p className="text-sm font-semibold text-white">Prem Paudel</p>
-              <p className="mt-1 text-xs leading-5 text-slate-400">
+            <div className="relative mx-5 -mt-8 rounded-2xl border border-slate-200 bg-white/90 px-5 py-4 shadow-xl shadow-slate-200/60 backdrop-blur-xl">
+              <p className="text-sm font-semibold text-slate-950">Prem Paudel</p>
+              <p className="mt-1 text-xs leading-5 text-slate-500">
                 Information Systems · Management
               </p>
             </div>
@@ -152,126 +158,218 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
-        <div className="grid gap-12 md:grid-cols-[0.8fr_1.4fr]">
-          <div><p className="section-label">01 / About</p></div>
-          <div>
-            <h2 className="section-title">Curious about how systems, people, and products fit together.</h2>
-            <div className="mt-8 space-y-5 text-base leading-7 text-slate-300">
-              <p>
-                I&apos;m studying Information Systems — Management and building experience
-                across software, databases, business analysis, and project work.
-              </p>
-              <p>
-                I like projects where I can understand a real problem, organize the pieces,
-                and build something people can actually use. This portfolio is a collection
-                of that work and what I&apos;m learning along the way.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="border-y border-white/[0.08] bg-white/[0.025]">
-        <div className="mx-auto max-w-6xl px-6 py-28">
-          <p className="section-label mb-12">02 / Experience</p>
-          <div className="divide-y divide-white/[0.08] border-y border-white/[0.08]">
-            <div className="grid gap-5 py-8 md:grid-cols-[0.6fr_1fr_2fr]">
-              <span className="text-sm text-slate-400">Summer 2027</span>
-              <div>
-                <p className="font-medium text-white">Progressive</p>
-                <p className="mt-1 text-sm text-slate-400">IT Project Management Intern</p>
-              </div>
-              <p className="text-sm leading-6 text-slate-300">
-                Incoming internship focused on technology project work, collaboration, and
-                learning how IT initiatives move from planning through execution.
-              </p>
-            </div>
-            <div className="grid gap-5 py-8 md:grid-cols-[0.6fr_1fr_2fr]">
-              <span className="text-sm text-slate-400">Present</span>
-              <div>
-                <p className="font-medium text-white">University of Akron</p>
-                <p className="mt-1 text-sm text-slate-400">Information Systems — Management</p>
-              </div>
-              <p className="text-sm leading-6 text-slate-300">
-                Coursework and projects across databases, Python, systems thinking,
-                business technology, analytics, and application development.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="mx-auto max-w-6xl px-6 py-28">
-        <div className="mb-12">
-          <p className="section-label">03 / Selected work</p>
-          <h2 className="section-title mt-4">Things I&apos;ve been building.</h2>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <GlowCard key={project.title} glowColor={project.color} customSize className="min-h-[350px] w-full">
-              <a href={project.href} className="flex h-full flex-col">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-slate-500">0{index + 1}</span>
-                  <ArrowUpRight size={18} className="text-slate-500 transition group-hover:text-white" />
-                </div>
-                <div className="mt-auto">
-                  <h3 className="text-2xl font-medium tracking-tight text-white">{project.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-300">{project.description}</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full border border-white/[0.09] bg-black/10 px-3 py-1 text-xs text-slate-400">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </a>
-            </GlowCard>
-          ))}
-        </div>
-      </section>
-
-      <section id="skills" className="border-y border-white/[0.08]">
-        <div className="mx-auto max-w-6xl px-6 py-28">
-          <div className="grid gap-12 md:grid-cols-[0.8fr_1.4fr]">
-            <div><p className="section-label">04 / Toolkit</p></div>
+      <div className="mx-auto max-w-6xl space-y-8 px-6 pb-10">
+        <section id="about" className="content-card scroll-mt-28">
+          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
             <div>
-              <h2 className="section-title">Tools I work with.</h2>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {skills.map((skill) => (
-                  <span key={skill} className="rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2 text-sm text-slate-200">
-                    {skill}
-                  </span>
-                ))}
+              <p className="section-label">01 / About</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">
+                A little about me.
+              </h2>
+            </div>
+
+            <div>
+              <p className="text-lg leading-8 text-slate-700">
+                I&apos;m interested in how systems, people, data, and products fit together.
+                I like understanding a problem first, organizing the moving parts, and then
+                building something practical around it.
+              </p>
+              <p className="mt-5 leading-7 text-slate-600">
+                My work so far spans web projects, databases, Python, business technology,
+                and project-oriented problem solving. I&apos;m especially interested in roles
+                where technical understanding and business communication overlap.
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="mini-card">
+                  <span className="mini-card-icon"><BriefcaseBusiness size={18} /></span>
+                  <p className="mt-4 text-sm font-semibold text-slate-950">Business + IT</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">Connecting technical work to business outcomes.</p>
+                </div>
+                <div className="mini-card">
+                  <span className="mini-card-icon"><Database size={18} /></span>
+                  <p className="mt-4 text-sm font-semibold text-slate-950">Systems + Data</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">Databases, SQL, analysis, and structured thinking.</p>
+                </div>
+                <div className="mini-card">
+                  <span className="mini-card-icon"><Sparkles size={18} /></span>
+                  <p className="mt-4 text-sm font-semibold text-slate-950">Product Curiosity</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-500">Turning ideas into approachable digital experiences.</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-32">
-        <div className="rounded-[2rem] border border-white/[0.1] bg-white/[0.045] p-8 sm:p-12">
-          <BriefcaseBusiness className="text-slate-400" size={24} />
-          <h2 className="mt-8 max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-            Have something interesting to build or talk about?
-          </h2>
-          <p className="mt-5 max-w-xl text-slate-300">
-            I&apos;m always interested in learning, collaborating, and meeting people working
-            across technology and business.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a className="contact-link" href="mailto:"><Mail size={16} /> Email me</a>
-            <a className="contact-link" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
+        <section id="education" className="content-card scroll-mt-28">
+          <div className="mb-8 flex items-start justify-between gap-6">
+            <div>
+              <p className="section-label">02 / Education</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Where I&apos;m learning.</h2>
+            </div>
+            <span className="hidden rounded-xl bg-indigo-50 p-3 text-indigo-600 sm:block">
+              <GraduationCap size={22} />
+            </span>
           </div>
-        </div>
-      </section>
 
-      <footer className="border-t border-white/[0.08]">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-950">University of Akron</h3>
+                <p className="mt-1 text-sm font-medium text-indigo-600">Information Systems — Management</p>
+                <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
+                  Coursework and hands-on projects across databases, application development,
+                  Python, analytics, systems thinking, and business technology.
+                </p>
+              </div>
+              <span className="text-sm font-medium text-slate-500">Class of 2028</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="content-card scroll-mt-28">
+          <div className="mb-8">
+            <p className="section-label">03 / Experience</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Experience & direction.</h2>
+          </div>
+
+          <div className="space-y-4">
+            <article className="experience-card">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-semibold text-slate-950">Progressive</h3>
+                    <span className="status-pill status-indigo">Incoming</span>
+                  </div>
+                  <p className="mt-1 text-sm font-medium text-indigo-600">IT Project Management Intern</p>
+                </div>
+                <span className="text-sm font-medium text-slate-500">Summer 2027</span>
+              </div>
+              <p className="mt-5 max-w-3xl text-sm leading-6 text-slate-600">
+                Incoming internship focused on technology project work, collaboration,
+                communication, and learning how IT initiatives move from planning through execution.
+              </p>
+            </article>
+
+            <article className="experience-card">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-950">University of Akron</h3>
+                  <p className="mt-1 text-sm font-medium text-indigo-600">Information Systems — Management Student</p>
+                </div>
+                <span className="text-sm font-medium text-slate-500">Present</span>
+              </div>
+              <p className="mt-5 max-w-3xl text-sm leading-6 text-slate-600">
+                Building practical experience through coursework and projects involving databases,
+                Python, web development, analytics, systems thinking, and business technology.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="projects" className="content-card scroll-mt-28">
+          <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="section-label">04 / Selected work</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Things I&apos;ve been building.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-6 text-slate-500">
+              Projects where I&apos;ve been learning by planning, designing, coding, and iterating.
+            </p>
+          </div>
+
+          <div className="grid gap-5 lg:grid-cols-3">
+            {projects.map((project, index) => (
+              <GlowCard
+                key={project.title}
+                glowColor={project.color}
+                customSize
+                className="min-h-[380px] w-full"
+              >
+                <a href={project.href} className="flex h-full flex-col">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span className="font-mono text-xs text-slate-400">0{index + 1}</span>
+                      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-indigo-600">
+                        {project.eyebrow}
+                      </p>
+                    </div>
+                    <span className="status-pill">{project.status}</span>
+                  </div>
+
+                  <div className="mt-auto">
+                    <h3 className="text-2xl font-semibold tracking-[-0.025em] text-slate-950">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{project.description}</p>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="project-tag">{tag}</span>
+                      ))}
+                    </div>
+                    <div className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-slate-800">
+                      Explore project <ArrowUpRight size={16} />
+                    </div>
+                  </div>
+                </a>
+              </GlowCard>
+            ))}
+          </div>
+        </section>
+
+        <section id="skills" className="content-card scroll-mt-28">
+          <div className="mb-9">
+            <p className="section-label">05 / Skills</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Tools I work with.</h2>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {skillGroups.map(({ title, icon: Icon, skills }) => (
+              <div key={title} className="skill-card">
+                <div className="flex items-center gap-3">
+                  <span className="mini-card-icon"><Icon size={18} /></span>
+                  <h3 className="text-sm font-semibold text-slate-950">{title}</h3>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {skills.map((skill) => (
+                    <span key={skill} className="skill-pill">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="contact-card scroll-mt-28">
+          <div>
+            <p className="section-label">06 / Contact</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-5xl">
+              Have something interesting to build or talk about?
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-600">
+              I&apos;m always interested in learning, collaborating, and meeting people working
+              across technology and business.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a className="primary-button" href="mailto:">
+              <Mail size={16} /> Email me
+            </a>
+            <a className="secondary-button" href={linkedinUrl}>
+              <Linkedin size={16} /> LinkedIn
+            </a>
+            <a className="secondary-button" href="https://github.com/PremPaudel05">
+              <Github size={16} /> GitHub
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <footer className="border-t border-slate-200 bg-white/70">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <span>Designed & built by Prem Paudel.</span>
-          <span>Built with Next.js, TypeScript & Tailwind.</span>
+          <span>Next.js · TypeScript · Tailwind · GitHub Pages</span>
         </div>
       </footer>
     </main>
