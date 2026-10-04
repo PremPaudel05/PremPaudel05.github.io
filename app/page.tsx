@@ -1,6 +1,8 @@
 import {
   ArrowUpRight,
   BriefcaseBusiness,
+  MessagesSquare,
+  Users,
   Code2,
   Database,
   Github,
@@ -50,20 +52,41 @@ const projects = [
 
 const skillGroups = [
   {
-    title: "Programming & Data",
+    title: "Programming & Web",
     icon: Code2,
-    skills: ["Python", "SQL", "JavaScript", "TypeScript"],
+    skills: ["Python", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
-    title: "Web & Product",
-    icon: Sparkles,
-    skills: ["React", "Next.js", "Tailwind CSS", "GitHub"],
-  },
-  {
-    title: "Systems & Analytics",
+    title: "Databases & Systems",
     icon: Database,
-    skills: ["Oracle Data Modeler", "Excel", "Linux", "Microsoft 365"],
+    skills: ["SQL", "ER Modeling", "Oracle Data Modeler", "Unix/Linux", "GitHub"],
   },
+  {
+    title: "Analytics & Decision Support",
+    icon: GraduationCap,
+    skills: ["Excel", "Spreadsheet Modeling", "Decision Analysis", "Microsoft 365"],
+  },
+  {
+    title: "Business Foundations",
+    icon: BriefcaseBusiness,
+    skills: ["Management Principles", "Accounting Fundamentals", "Micro & Macroeconomics", "International Business"],
+  },
+  {
+    title: "Communication & Collaboration",
+    icon: MessagesSquare,
+    skills: ["Business Communication", "Public Speaking", "Professional Writing", "Teamwork"],
+  },
+  {
+    title: "AI & Agile Foundations",
+    icon: Sparkles,
+    skills: ["Applied AI Fundamentals", "Information Systems Concepts", "Generative AI Basics", "Agile Development Fundamentals"],
+  },
+];
+
+const learningCredentials = [
+  { title: "Agile Development in the New World of Work", provider: "LinkedIn Learning", date: "September 2026" },
+  { title: "What Is Generative AI", provider: "Microsoft", date: "September 2026" },
+  { title: "Business Communication", provider: "Stukent", date: "December 2025" },
 ];
 
 export default function Home() {
@@ -137,43 +160,51 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl space-y-8 px-6 pb-10">
         <section id="about" className="content-card scroll-mt-28">
-          <div className="grid gap-10 md:grid-cols-[0.7fr_1.3fr]">
+          <div className="grid gap-8 md:grid-cols-[0.65fr_1.35fr] md:gap-12">
             <div>
               <p className="section-label">01 / About</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">
-                A little about me.
+              <h2 className="mt-4 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950">
+                Technical curiosity.<br />A people-first approach.
               </h2>
             </div>
-
             <div>
               <p className="text-lg leading-8 text-slate-700">
-                I&apos;m interested in how systems, people, data, and products fit together.
-                I like understanding a problem first, organizing the moving parts, and then
-                building something practical around it.
+                I&apos;m an Information Systems Management student who wants to help teams
+                turn business needs into useful technology. Through coursework and personal
+                projects, I&apos;m learning to design relational databases, write SQL and Python,
+                build web applications, and use spreadsheets to support decisions.
               </p>
               <p className="mt-5 leading-7 text-slate-600">
-                My work so far spans web projects, databases, Python, business technology,
-                and project-oriented problem solving. I&apos;m especially interested in roles
-                where technical understanding and business communication overlap.
+                What interests me most is the work around the technology: understanding what
+                people need, breaking a problem into manageable tasks, and making technical
+                information clear to the people using it. I value clear communication,
+                shared responsibility, and following through on commitments.
               </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="mini-card">
-                  <span className="mini-card-icon"><BriefcaseBusiness size={18} /></span>
-                  <p className="mt-4 text-sm font-semibold text-slate-950">Business + IT</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">Connecting technical work to business outcomes.</p>
-                </div>
-                <div className="mini-card">
-                  <span className="mini-card-icon"><Database size={18} /></span>
-                  <p className="mt-4 text-sm font-semibold text-slate-950">Systems + Data</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">Databases, SQL, analysis, and structured thinking.</p>
-                </div>
-                <div className="mini-card">
-                  <span className="mini-card-icon"><Sparkles size={18} /></span>
-                  <p className="mt-4 text-sm font-semibold text-slate-950">Product Curiosity</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">Turning ideas into approachable digital experiences.</p>
-                </div>
+              <div className="mt-6 border-l-2 border-indigo-200 pl-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-indigo-700">Where I want to contribute</p>
+                <p className="mt-2 text-sm leading-7 text-slate-600">
+                  I&apos;m looking for opportunities in IT project coordination, business analysis,
+                  and information systems where I can work with a team, help manage projects,
+                  and grow into leadership responsibilities.
+                </p>
               </div>
+            </div>
+          </div>
+          <div className="mt-9 grid gap-4 md:grid-cols-3">
+            <div className="mini-card">
+              <span className="mini-card-icon"><Database size={18} /></span>
+              <h3 className="mt-4 text-sm font-semibold text-slate-950">Understand the system</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-500">Use data models, SQL, and application logic to understand how information supports a business process.</p>
+            </div>
+            <div className="mini-card">
+              <span className="mini-card-icon"><BriefcaseBusiness size={18} /></span>
+              <h3 className="mt-4 text-sm font-semibold text-slate-950">Keep the work organized</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-500">Bring an interest in planning, priorities, and Agile ways of working to a team&apos;s project goals.</p>
+            </div>
+            <div className="mini-card">
+              <span className="mini-card-icon"><Users size={18} /></span>
+              <h3 className="mt-4 text-sm font-semibold text-slate-950">Make communication useful</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-500">Listen carefully, ask questions, and explain technical ideas in language teammates can act on.</p>
             </div>
           </div>
         </section>
@@ -182,24 +213,41 @@ export default function Home() {
           <div className="mb-8 flex items-start justify-between gap-6">
             <div>
               <p className="section-label">02 / Education</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Where I&apos;m learning.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Education &amp; continued learning.</h2>
             </div>
-            <span className="hidden rounded-xl bg-indigo-50 p-3 text-indigo-600 sm:block">
-              <GraduationCap size={22} />
-            </span>
+            <span className="hidden rounded-xl bg-indigo-50 p-3 text-indigo-600 sm:block"><GraduationCap size={22} /></span>
           </div>
-
           <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-slate-950">University of Akron</h3>
-                <p className="mt-1 text-sm font-medium text-indigo-600">Information Systems — Management</p>
+                <p className="mt-2 text-sm font-semibold text-indigo-700">Bachelor of Business Administration (BBA)</p>
+                <p className="mt-1 text-sm font-medium text-slate-700">Information Systems Management</p>
                 <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600">
-                  Coursework and hands-on projects across databases, application development,
-                  Python, analytics, systems thinking, and business technology.
+                  Building a foundation in information systems, applied AI, spreadsheet modeling,
+                  management, accounting, and business communication.
+                </p>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">
+                  Current coursework: business application development, database management,
+                  introductory statistics, and supply chain and operations management.
                 </p>
               </div>
-              <span className="text-sm font-medium text-slate-500">Class of 2028</span>
+              <div className="flex shrink-0 flex-wrap items-center gap-3 sm:flex-col sm:items-end">
+                <span className="text-sm font-medium text-slate-500">Class of 2028</span>
+                <span className="rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800">GPA: 3.3 / 4.0</span>
+              </div>
+            </div>
+          </div>
+          <div className="mt-7">
+            <h3 className="text-sm font-semibold text-slate-950">Certificates &amp; course completions</h3>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              {learningCredentials.map((credential) => (
+                <article key={credential.title} className="rounded-xl border border-slate-200 bg-white p-5">
+                  <p className="text-xs font-medium text-indigo-700">{credential.provider}</p>
+                  <h4 className="mt-2 text-sm font-semibold leading-6 text-slate-800">{credential.title}</h4>
+                  <p className="mt-3 text-xs text-slate-500">{credential.date}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -297,7 +345,12 @@ export default function Home() {
         <section id="skills" className="content-card scroll-mt-28">
           <div className="mb-9">
             <p className="section-label">05 / Skills</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Tools I work with.</h2>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-slate-950">Skills</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500">
+              Skills developed through coursework, personal projects, and continued learning.
+              I&apos;m currently building further experience in databases, business application
+              development, statistics, and operations management.
+            </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
