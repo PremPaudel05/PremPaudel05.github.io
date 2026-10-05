@@ -120,3 +120,8 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
   background: var(--skill-tint);
   border: 1px solid var(--skill-border);
 }
+
+.contact-label { display: block; margin-bottom: .5rem; font-size: .8rem; font-weight: 500; color: #57534a; }
+.contact-input { display: block; width: 100%; min-width: 0; border: 1px solid #d9d3c7; border-radius: .55rem; background: #fffefa; padding: .7rem .8rem; color: #292823; font: inherit; font-size: .9rem; }
+.contact-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+button.primary-button { cursor: pointer; }

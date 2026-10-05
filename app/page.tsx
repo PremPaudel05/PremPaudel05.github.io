@@ -7,6 +7,7 @@ import {
   Github,
   GraduationCap,
   Linkedin,
+  Handshake,
   Mail,
   MapPin,
   BrainCircuit,
@@ -19,6 +20,7 @@ import {
   Store,
   Wrench,
 } from "lucide-react";
+import { ContactForm } from "@/components/ui/contact-form";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import { GlowCard } from "@/components/ui/spotlight-card";
@@ -27,6 +29,7 @@ import graduationPhoto from "@/public/images/prem-graduation.jpg";
 const email = "Prempaudel5b@gmail.com";
 const resumeUrl = "/documents/Prem-Paudel-Resume.pdf";
 
+const handshakeUrl = "https://app.joinhandshake.com/profiles/6a5pq9";
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
 
 const projects = [
@@ -153,6 +156,7 @@ export default function Home() {
             <div className="mt-5 flex flex-wrap gap-3">
               <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
               <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
+                <a className="social-pill" href={handshakeUrl}><Handshake size={16} /> Handshake</a>
               <span className="social-pill"><MapPin size={16} /> Akron, Ohio</span>
             </div>
           </div>
@@ -173,45 +177,40 @@ export default function Home() {
 
       <div className="mx-auto max-w-6xl space-y-6 px-6 pb-10 sm:space-y-10">
         <section id="about" className="content-card scroll-mt-28">
-          <div className="grid gap-8 md:grid-cols-[0.65fr_1.35fr] md:gap-12">
-            <div>
-              <p className="section-label">About</p>
-              <h2 className="mt-4 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950">
-                Understanding systems.<br />Working with people.
-              </h2>
+          <p className="section-label">About</p>
+          <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950">
+            Understanding systems. Working with people.
+          </h2>
+          <div className="mt-7 grid gap-7 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
+            <div className="text-base leading-8 text-stone-600">
+              <p>
+                I&apos;m studying Information Systems Management at the University of Akron
+                because I like sitting right between how technology is built and how people
+                actually use it. While I enjoy getting my hands dirty with web development
+                and data analysis, my favorite part of any project is the translation work:
+                figuring out what a team really needs, untangling messy workflows, and
+                organizing the steps to get things done.
+              </p>
+              <p className="mt-4">
+                I&apos;m at my best when there&apos;s a clear process, shared accountability,
+                and a team that communicates openly.
+              </p>
             </div>
-            <div>
-              <p className="text-lg leading-8 text-stone-700">
-                I&apos;m an Information Systems Management student at the University of Akron
-                who wants to help teams turn business needs into technology people can trust.
-                Through coursework and projects like Voya, a travel platform I built with
-                JavaScript, TypeScript, and AI APIs, I&apos;m learning to design clear interfaces,
-                build web applications, and use spreadsheets to support decisions.
+            <div className="self-start rounded-xl border border-stone-200 bg-stone-50/80 p-6">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">Where I want to contribute</h3>
+              <p className="mt-3 text-sm leading-7 text-stone-600">
+                I&apos;m looking for roles in business analysis, IT project coordination,
+                or information systems. I want to join a structured team where I can help
+                keep complex projects on track, build dependable tools, and grow into a leadership role.
               </p>
-              <p className="mt-5 leading-7 text-stone-600">
-                What interests me most is the work around the technology: understanding what
-                people need, breaking a problem into manageable tasks, and making technical
-                information clear to the people using it. I&apos;ve worked in high-volume,
-                process-driven environments where accuracy and accountability matter, and
-                I value clear communication, shared responsibility, and following through on commitments.
-              </p>
-              <div className="mt-6 border-l-2 border-stone-200 pl-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">Where I want to contribute</p>
-                <p className="mt-2 text-sm leading-7 text-stone-600">
-                  I&apos;m looking for opportunities in IT project coordination, business analysis,
-                  and information systems within large, structured organizations where careful
-                  work and dependable systems matter. I want to work with a team, help manage
-                  projects, and grow into leadership responsibilities.
-                </p>
-              </div>
             </div>
           </div>
           <div className="about-quote">
-            <p className="max-w-2xl text-sm leading-7 text-stone-600">
-              That&apos;s why I care about how systems are designed: the tools and processes
-              we build influence how people work together.
+            <p className="max-w-3xl text-sm leading-7 text-stone-600">
+              The tools and processes we create shape how a team works. That idea is what
+              connects my interest in technology with the people who use it, and why this quote resonates with me:
             </p>
-            <figure className="mt-5">
+            <figure className="mt-4">
               <blockquote className="font-serif text-xl italic leading-relaxed text-stone-800 sm:text-2xl">
                 &ldquo;We shape our buildings; thereafter they shape us.&rdquo;
               </blockquote>
@@ -390,36 +389,36 @@ export default function Home() {
         </section>
 
         <section id="contact" className="contact-card scroll-mt-28">
-          <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+            <div className="min-w-0">
               <p className="section-label">Contact</p>
               <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s start a conversation.</h2>
               <p className="mt-5 max-w-lg text-sm leading-7 text-stone-600">
-                Have an opportunity, a project idea, or a question? I&apos;d love to hear
-                from you and learn more about what you&apos;re working on.
+                Have an opportunity, a project idea, or a question? Send me a message.
+                I&apos;d love to hear from you and learn more about what you&apos;re working on.
               </p>
-              <p className="mt-5 flex items-center gap-2 text-sm text-stone-500"><Clock3 size={16} /> I usually reply within 24 hours.</p>
-            </div>
-            <div className="contact-details">
-              <Mail size={24} strokeWidth={1.5} className="text-accent" />
-              <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-stone-500">Email me</p>
-              <a className="mt-2 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium tracking-tight text-stone-900 hover:underline sm:text-lg lg:text-xl" href={`mailto:${email}`}>
-                {email}<ArrowUpRight size={18} className="shrink-0" />
-              </a>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
-                <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
-                <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Résumé PDF</a>
+              <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I tend to reply within 12–24 hours.</p>
+              <div className="mt-8 border-t border-stone-300/70 pt-6">
+                <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Or email me directly</p>
+                <a className="mt-3 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium tracking-tight text-stone-900 hover:underline sm:text-lg" href={`mailto:${email}`}>
+                  {email}<ArrowUpRight size={18} className="shrink-0" />
+                </a>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
+                  <a className="social-pill" href={handshakeUrl}><Handshake size={16} /> Handshake</a>
+                  <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
+                  <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Résumé PDF</a>
+                </div>
               </div>
             </div>
+            <ContactForm email={email} />
           </div>
         </section>
       </div>
 
       <footer className="border-t border-stone-200 bg-white/70">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-xs text-stone-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>Designed & built by Prem Paudel.</span>
-          <span>Akron, Ohio · Business &amp; technology</span>
+        <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs text-stone-500">
+          <p>© 2026 Designed &amp; built by Prem Paudel.</p>
         </div>
       </footer>
     </main>
