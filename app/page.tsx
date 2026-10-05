@@ -18,6 +18,7 @@ import {
   Sun,
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import { GlowCard } from "@/components/ui/spotlight-card";
@@ -121,6 +122,7 @@ export default function Home() {
     <main>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SectionNavigation />
+      <ScrollReveal />
 
       <section id="main-content" className="hero-simple pb-16 pt-32 sm:pb-24 sm:pt-40">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">

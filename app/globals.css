@@ -125,3 +125,44 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
 .company-logo img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
 button.social-pill { cursor: pointer; }
 button.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
+
+/* Clear color cues on the warm, uncluttered base. */
+.hero-chip { padding: .48rem .75rem; font-size: .75rem; font-weight: 600; line-height: 1.5; color: #fff; border-color: transparent; }
+.hero-chip:nth-child(1) { background: #365d7d; }
+.hero-chip:nth-child(2) { background: #436652; }
+.hero-chip:nth-child(3) { background: #71536b; }
+.hero-chip:nth-child(4) { background: #895740; }
+.hero-chip:nth-child(5) { background: #3e5c68; }
+.hero-name .text-accent { color: #365d7d; }
+.primary-button { background: #294e6b; border-color: #294e6b; }
+.primary-button:hover { background: #203e55; border-color: #203e55; }
+.secondary-button { background: #edf2f6; border-color: #c6d6e3; color: #294e6b; }
+.secondary-button:hover { background: #e0eaf2; border-color: #9bb6cb; }
+.nav-contact { background: #edf2f6; border-color: #c6d6e3; color: #294e6b; }
+.nav-contact:hover { background: #e0eaf2; }
+.nav-link[aria-current="location"] { background: #e7eef4; color: #294e6b; box-shadow: inset 0 -2px 0 #365d7d; }
+.nav-contact[aria-current="location"] { background: #dce8f1; border-color: #9bb6cb; color: #294e6b; }
+#about { border-top: 3px solid #93ad9d; }
+#about .section-label { color: #436652; }
+#education { border-top: 3px solid #90aac0; }
+#education .section-label { color: #365d7d; }
+#experience { border-top: 3px solid #c39c85; }
+#projects { border-top: 3px solid #90aac0; }
+#skills { border-top: 3px solid #b9a1b3; }
+#contact { background: #eaf0f3; border-color: #cbd9e3; }
+#contact .section-label, #contact .section-title { color: #294e6b; }
+.contact-details { background: #f8fafb; border-color: #cbd9e3; }
+#projects article[aria-label="Voya World"] .project-symbol { background: #e8f0e7; color: #42634e; border-color: #cddfce; }
+#projects article[aria-label="DigiCard"] .project-symbol { background: #e7eff6; color: #315877; border-color: #c9dbe8; }
+#projects article[aria-label="ZipShade"] .project-symbol { background: #f7efda; color: #775b20; border-color: #e9d9ac; }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] { transition: opacity 480ms ease, transform 480ms cubic-bezier(.2,.65,.3,1); }
+  [data-reveal="pending"] { opacity: 0; transform: translateY(14px); }
+  [data-reveal="visible"], [data-reveal]:focus-within { opacity: 1; transform: none; }
+  .tool-item { transition: transform 180ms ease, border-color 180ms ease; }
+  .tool-item:hover { transform: translateY(-2px); border-color: #9bb6cb; }
+}
+@media print {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
