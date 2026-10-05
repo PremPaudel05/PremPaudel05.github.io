@@ -397,7 +397,7 @@ export default function Home() {
                 Have an opportunity, a project idea, or a question? Send me a message.
                 I&apos;d love to hear from you and learn more about what you&apos;re working on.
               </p>
-              <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I tend to reply within 12–24 hours.</p>
+              <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I usually tend to reply within 24hrs.</p>
               <div className="mt-8 border-t border-stone-300/70 pt-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Or email me directly</p>
                 <a className="mt-3 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium tracking-tight text-stone-900 hover:underline sm:text-lg" href={`mailto:${email}`}>
