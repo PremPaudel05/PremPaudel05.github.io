@@ -5,7 +5,6 @@ import {
   Code2,
   Database,
   Github,
-  GraduationCap,
   Linkedin,
   Handshake,
   Mail,
@@ -17,13 +16,14 @@ import {
   Globe2,
   IdCard,
   Sun,
-  Store,
-  Wrench,
 } from "lucide-react";
-import { ContactForm } from "@/components/ui/contact-form";
+import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import { GlowCard } from "@/components/ui/spotlight-card";
+import samsLogo from "@/public/images/sams-club.webp";
+import weaverLogo from "@/public/images/weaver-fab-finish.webp";
+import universityLogo from "@/public/images/university-of-akron.jpg";
 import graduationPhoto from "@/public/images/prem-graduation.jpg";
 
 const email = "Prempaudel5b@gmail.com";
@@ -225,7 +225,7 @@ export default function Home() {
               <p className="section-label">Education</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Education &amp; learning.</h2>
             </div>
-            <span className="hidden rounded-xl bg-stone-100 p-3 text-accent sm:block"><GraduationCap size={22} /></span>
+            <img src={universityLogo.src} width={universityLogo.width} height={universityLogo.height} alt="University of Akron seal" className="h-16 w-16 shrink-0 object-contain mix-blend-multiply sm:h-20 sm:w-20" loading="lazy" />
           </div>
           <div className="rounded-2xl border border-stone-200 bg-stone-50/80 p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
@@ -236,7 +236,7 @@ export default function Home() {
               </div>
               <div className="flex shrink-0 flex-wrap items-center gap-3 sm:flex-col sm:items-end">
                 <span className="text-sm font-medium text-stone-500">Class of 2028</span>
-                <span className="rounded-lg border border-stone-200 bg-stone-100 px-3 py-2 text-sm font-semibold text-accent">GPA: 3.3 / 4.0</span>
+                <span className="rounded-lg border border-stone-200 bg-stone-100 px-3 py-2 text-sm font-semibold text-accent">GPA: 3.37</span>
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ export default function Home() {
           </div>
           <div className="experience-list">
             <article className="experience-entry">
-              <span className="experience-icon"><Store size={24} strokeWidth={1.6} /></span>
+              <div className="company-logo"><img src={samsLogo.src} width={samsLogo.width} height={samsLogo.height} alt="Sam’s Club logo" loading="lazy" /></div>
               <div className="min-w-0">
                 <div className="flex flex-col justify-between gap-2 sm:flex-row">
                   <div>
@@ -284,7 +284,7 @@ export default function Home() {
               </div>
             </article>
             <article className="experience-entry">
-              <span className="experience-icon"><Wrench size={24} strokeWidth={1.6} /></span>
+              <div className="company-logo"><img src={weaverLogo.src} width={weaverLogo.width} height={weaverLogo.height} alt="Weaver Precision Fabrication & Finishing logo" loading="lazy" /></div>
               <div className="min-w-0">
                 <div className="flex flex-col justify-between gap-2 sm:flex-row">
                   <div>
@@ -389,29 +389,30 @@ export default function Home() {
         </section>
 
         <section id="contact" className="contact-card scroll-mt-28">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+          <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div className="min-w-0">
               <p className="section-label">Contact</p>
               <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s start a conversation.</h2>
               <p className="mt-5 max-w-lg text-sm leading-7 text-stone-600">
-                Have an opportunity, a project idea, or a question? Send me a message.
-                I&apos;d love to hear from you and learn more about what you&apos;re working on.
+                Have an opportunity, a project idea, or a question? I&apos;d love to hear
+                from you and learn more about what you&apos;re working on.
               </p>
               <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I usually tend to reply within 24hrs.</p>
-              <div className="mt-8 border-t border-stone-300/70 pt-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-stone-500">Or email me directly</p>
-                <a className="mt-3 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium tracking-tight text-stone-900 hover:underline sm:text-lg" href={`mailto:${email}`}>
-                  {email}<ArrowUpRight size={18} className="shrink-0" />
-                </a>
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
-                  <a className="social-pill" href={handshakeUrl}><Handshake size={16} /> Handshake</a>
-                  <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
-                  <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Résumé PDF</a>
-                </div>
+            </div>
+            <div className="contact-details min-w-0">
+              <Mail size={24} strokeWidth={1.5} className="text-accent" />
+              <p className="mt-5 text-xs font-semibold uppercase tracking-widest text-stone-500">Email me</p>
+              <a className="mt-2 inline-flex max-w-full items-center gap-2 break-all text-sm font-medium tracking-tight text-stone-900 hover:underline sm:text-lg" href={`mailto:${email}`}>
+                {email}<ArrowUpRight size={18} className="shrink-0" />
+              </a>
+              <div className="mt-4"><CopyEmailButton email={email} /></div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
+                <a className="social-pill" href={handshakeUrl}><Handshake size={16} /> Handshake</a>
+                <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
+                <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Résumé PDF</a>
               </div>
             </div>
-            <ContactForm email={email} />
           </div>
         </section>
       </div>

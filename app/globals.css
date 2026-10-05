@@ -52,10 +52,9 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
 .project-tag { border: 1px solid #e4ddd1; background: #fffdf9; color: #726652; }
 .skill-pill { background: #efede7; color: #57534a; }
 .project-symbol { display: inline-flex; align-items: center; justify-content: center; width: 3.25rem; height: 3.25rem; border-radius: .8rem; border: 1px solid #ded6c8; background: #f0ebe1; color: #8a6245; }
-.experience-entry { display: grid; grid-template-columns: 3rem minmax(0,1fr); gap: 1.25rem; padding: 1.75rem 0; border-top: 1px solid #e5e1d9; }
+.experience-entry { display: grid; grid-template-columns: 6rem minmax(0,1fr); gap: 1.25rem; padding: 1.75rem 0; border-top: 1px solid #e5e1d9; }
 .experience-entry:first-child { padding-top: 0; border-top: 0; }
 .experience-entry:last-child { padding-bottom: 0; }
-.experience-icon { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border: 1px solid #e2dccc; background: #f5f1e8; border-radius: .7rem; color: #756146; }
 .experience-points { margin: 1rem 0 0; padding-left: 1.1rem; list-style: disc; color: #625e55; font-size: .85rem; line-height: 1.9; }
 .experience-points li + li { margin-top: .35rem; }
 .experience-points li::marker { color: #ab9678; }
@@ -121,7 +120,8 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
   border: 1px solid var(--skill-border);
 }
 
-.contact-label { display: block; margin-bottom: .5rem; font-size: .8rem; font-weight: 500; color: #57534a; }
-.contact-input { display: block; width: 100%; min-width: 0; border: 1px solid #d9d3c7; border-radius: .55rem; background: #fffefa; padding: .7rem .8rem; color: #292823; font: inherit; font-size: .9rem; }
-.contact-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
-button.primary-button { cursor: pointer; }
+
+.company-logo { display: flex; align-items: center; justify-content: center; width: 6rem; height: 5rem; padding: .4rem; border: 1px solid #e5e1d9; border-radius: .7rem; background: #faf9f5; }
+.company-logo img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+button.social-pill { cursor: pointer; }
+button.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
