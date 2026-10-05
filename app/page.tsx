@@ -2,7 +2,6 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
   MessagesSquare,
-  Users,
   Code2,
   Database,
   Github,
@@ -72,31 +71,37 @@ const projects = [
 const skillGroups = [
   {
     title: "Programming & Web",
+    tone: "blue",
     icon: Code2,
     skills: ["Python", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Databases & Systems",
+    tone: "sage",
     icon: Database,
     skills: ["SQL", "ER Modeling", "Oracle Data Modeler", "Unix/Linux", "GitHub", "Visual Studio Code"],
   },
   {
     title: "Analytics & Decision Support",
+    tone: "amber",
     icon: ChartNoAxesCombined,
     skills: ["Excel", "Spreadsheet Modeling", "Decision Analysis", "Microsoft 365"],
   },
   {
     title: "Business Foundations",
+    tone: "clay",
     icon: BriefcaseBusiness,
     skills: ["Management Principles", "Accounting Fundamentals", "Micro & Macroeconomics", "International Business"],
   },
   {
     title: "Communication & Collaboration",
+    tone: "rose",
     icon: MessagesSquare,
     skills: ["Business Communication", "Public Speaking", "Professional Writing", "Teamwork"],
   },
   {
     title: "AI & Agile Foundations",
+    tone: "slate",
     icon: BrainCircuit,
     skills: ["Applied AI Fundamentals", "Information Systems Concepts", "Generative AI Basics", "Agile Development Fundamentals"],
   },
@@ -170,7 +175,7 @@ export default function Home() {
         <section id="about" className="content-card scroll-mt-28">
           <div className="grid gap-8 md:grid-cols-[0.65fr_1.35fr] md:gap-12">
             <div>
-              <p className="section-label">01 / About</p>
+              <p className="section-label">About</p>
               <h2 className="mt-4 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950">
                 Understanding systems.<br />Working with people.
               </h2>
@@ -201,23 +206,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
-            <div className="mini-card">
-              <span className="mini-card-icon"><Database size={18} /></span>
-              <h3 className="mt-4 text-sm font-semibold text-stone-950">Understand the system</h3>
-              <p className="mt-2 text-sm leading-6 text-stone-500">Use data models, SQL, and application logic to understand how information supports a business process.</p>
-            </div>
-            <div className="mini-card">
-              <span className="mini-card-icon"><BriefcaseBusiness size={18} /></span>
-              <h3 className="mt-4 text-sm font-semibold text-stone-950">Keep the work organized</h3>
-              <p className="mt-2 text-sm leading-6 text-stone-500">Bring an interest in planning, priorities, and Agile ways of working to a team&apos;s project goals.</p>
-            </div>
-            <div className="mini-card">
-              <span className="mini-card-icon"><Users size={18} /></span>
-              <h3 className="mt-4 text-sm font-semibold text-stone-950">Make communication useful</h3>
-              <p className="mt-2 text-sm leading-6 text-stone-500">Listen carefully, ask questions, and explain technical ideas in language teammates can act on.</p>
-            </div>
-          </div>
           <div className="about-quote">
             <p className="max-w-2xl text-sm leading-7 text-stone-600">
               That&apos;s why I care about how systems are designed: the tools and processes
@@ -235,7 +223,7 @@ export default function Home() {
         <section id="education" className="content-card scroll-mt-28">
           <div className="mb-8 flex items-start justify-between gap-6">
             <div>
-              <p className="section-label">02 / Education</p>
+              <p className="section-label">Education</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Education &amp; learning.</h2>
             </div>
             <span className="hidden rounded-xl bg-stone-100 p-3 text-accent sm:block"><GraduationCap size={22} /></span>
@@ -270,8 +258,7 @@ export default function Home() {
         <section id="experience" className="content-card scroll-mt-28">
           <div className="section-heading-row">
             <div>
-              <p className="section-label">03 / Experience</p>
-              <h2 className="section-title">Learning by showing up.</h2>
+              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-stone-950">Experience</h2>
             </div>
           </div>
           <div className="experience-list">
@@ -321,8 +308,7 @@ export default function Home() {
         <section id="projects" className="content-card scroll-mt-28">
           <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="section-label">04 / Selected work</p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Ideas put into practice.</h2>
+              <h2 className="text-3xl font-semibold tracking-[-0.035em] text-stone-950">Projects</h2>
             </div>
           </div>
 
@@ -372,12 +358,7 @@ export default function Home() {
 
         <section id="skills" className="content-card scroll-mt-28">
           <div className="mb-9">
-            <p className="section-label">05 / Skills</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Skills</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-stone-500">
-              A practical mix of technical tools, business knowledge, and communication skills,
-              developed through projects, work, and continued learning.
-            </p>
+            <h2 className="text-3xl font-semibold tracking-[-0.035em] text-stone-950">Skills</h2>
           </div>
 
           <div className="tool-strip" aria-label="Selected tools and development environment">
@@ -392,8 +373,8 @@ export default function Home() {
             ))}
           </div>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {skillGroups.map(({ title, icon: Icon, skills }) => (
-              <div key={title} className="skill-card">
+            {skillGroups.map(({ title, tone, icon: Icon, skills }) => (
+              <div key={title} className="skill-card" data-tone={tone}>
                 <div className="flex items-center gap-3">
                   <span className="mini-card-icon"><Icon size={21} strokeWidth={1.6} /></span>
                   <h3 className="text-sm font-semibold text-stone-950">{title}</h3>
@@ -411,7 +392,7 @@ export default function Home() {
         <section id="contact" className="contact-card scroll-mt-28">
           <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div>
-              <p className="section-label">06 / Contact</p>
+              <p className="section-label">Contact</p>
               <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s start a conversation.</h2>
               <p className="mt-5 max-w-lg text-sm leading-7 text-stone-600">
                 Have an opportunity, a project idea, or a question? I&apos;d love to hear

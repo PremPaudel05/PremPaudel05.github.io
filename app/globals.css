@@ -106,3 +106,17 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
   padding-top: 1.75rem;
   border-top: 1px solid #e5e1d9;
 }
+
+/* Muted category colors keep skill labels distinct and easy to read. */
+.skill-card[data-tone="blue"] { --skill-ink: #315877; --skill-tint: #e7eff6; --skill-border: #c9dbe8; }
+.skill-card[data-tone="sage"] { --skill-ink: #42634e; --skill-tint: #e8f0e7; --skill-border: #cddfce; }
+.skill-card[data-tone="amber"] { --skill-ink: #775b20; --skill-tint: #f7efda; --skill-border: #e9d9ac; }
+.skill-card[data-tone="clay"] { --skill-ink: #884f37; --skill-tint: #f6eae1; --skill-border: #e9cfbd; }
+.skill-card[data-tone="rose"] { --skill-ink: #82485b; --skill-tint: #f5e8ee; --skill-border: #e8cdd7; }
+.skill-card[data-tone="slate"] { --skill-ink: #4d5c6c; --skill-tint: #e9edf1; --skill-border: #cfd8e1; }
+.skill-card[data-tone] .skill-pill,
+.skill-card[data-tone] .mini-card-icon {
+  color: var(--skill-ink);
+  background: var(--skill-tint);
+  border: 1px solid var(--skill-border);
+}
