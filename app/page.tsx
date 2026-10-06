@@ -124,7 +124,7 @@ export default function Home() {
       <SectionNavigation />
       <ScrollReveal />
 
-      <section id="main-content" className="hero-simple pb-16 pt-32 sm:pb-24 sm:pt-40">
+      <section id="main-content" className="hero-simple theme-dark pb-16 pt-32 sm:pb-24 sm:pt-40">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
           <div className="min-w-0">
             <div className="mb-7 flex items-center gap-4">
@@ -163,7 +163,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-w-sm justify-self-center md:justify-self-end">
-            <div className="rounded-[2rem] border border-stone-200 bg-white p-2 shadow-[0_18px_48px_-30px_rgba(15,23,42,0.3)]">
+            <div className="portrait-frame rounded-[2rem] border border-stone-200 bg-white p-2 shadow-[0_18px_48px_-30px_rgba(15,23,42,0.3)]">
               <img
                 src={graduationPhoto.src}
                 alt="Prem Paudel wearing his graduation cap"
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-6xl space-y-6 px-6 pb-10 sm:space-y-10">
+      <div className="portfolio-sections">
         <section id="about" className="content-card scroll-mt-28">
           <p className="section-label">About</p>
           <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950">
@@ -306,7 +306,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="content-card scroll-mt-28">
+        <section id="projects" className="theme-dark content-card scroll-mt-28">
           <div className="mb-9 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-3xl font-semibold tracking-[-0.035em] text-stone-950">Projects</h2>
@@ -390,7 +390,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="contact-card scroll-mt-28">
+        <section id="contact" className="theme-dark contact-card scroll-mt-28">
           <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div className="min-w-0">
               <p className="section-label">Contact</p>
@@ -419,7 +419,7 @@ export default function Home() {
         </section>
       </div>
 
-      <footer className="border-t border-stone-200 bg-white/70">
+      <footer className="site-footer">
         <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs text-stone-500">
           <p>© 2026 Designed &amp; built by Prem Paudel.</p>
         </div>
