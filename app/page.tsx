@@ -18,6 +18,7 @@ import {
   Sun,
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
@@ -119,7 +120,7 @@ const learningCredentials = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="theme-dark">
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SectionNavigation />
       <ScrollReveal />
@@ -152,7 +153,7 @@ export default function Home() {
               <span className="hero-chip">Business + Technology</span>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="primary-button"><Download size={16} /> View résumé</a>
+              <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="primary-button"><Download size={16} /> View Resume</a>
               <a href="#contact" className="secondary-button"><Mail size={16} /> Get in touch</a>
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
@@ -227,7 +228,7 @@ export default function Home() {
               <p className="section-label">Education</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-stone-950">Education &amp; learning.</h2>
             </div>
-            <img src={universityLogo.src} width={universityLogo.width} height={universityLogo.height} alt="University of Akron seal" className="h-16 w-16 shrink-0 object-contain mix-blend-multiply sm:h-20 sm:w-20" loading="lazy" />
+            <img src={universityLogo.src} width={universityLogo.width} height={universityLogo.height} alt="University of Akron seal" className="h-16 w-16 shrink-0 university-logo object-contain sm:h-20 sm:w-20" loading="lazy" />
           </div>
           <div className="rounded-2xl border border-stone-200 bg-stone-50/80 p-6">
             <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
@@ -391,15 +392,21 @@ export default function Home() {
         </section>
 
         <section id="contact" className="theme-dark contact-card scroll-mt-28">
-          <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div className="contact-stars" aria-hidden="true">
+            <div className="contact-starfield" />
+            <ShootingStars starColor="#d5ecff" trailColor="#4a9bd5" minSpeed={10} maxSpeed={18} minDelay={1800} maxDelay={3800} />
+            <ShootingStars starColor="#b1cfff" trailColor="#607ea5" minSpeed={8} maxSpeed={14} minDelay={3000} maxDelay={5500} />
+          </div>
+          <div className="relative z-10 grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:items-center">
             <div className="min-w-0">
               <p className="section-label">Contact</p>
-              <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s start a conversation.</h2>
+              <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s connect.</h2>
               <p className="mt-5 max-w-lg text-sm leading-7 text-stone-600">
-                Have an opportunity, a project idea, or a question? I&apos;d love to hear
-                from you and learn more about what you&apos;re working on.
+                <strong className="font-semibold text-stone-100">Let&apos;s start a conversation.</strong>{" "}
+                Whether you want to collaborate on a project, talk about systems and technology,
+                or just connect, I&apos;d love to hear from you and learn more about what you&apos;re building.
               </p>
-              <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I usually tend to reply within 24hrs.</p>
+              <p className="mt-5 flex items-center gap-2 text-sm text-stone-600"><Clock3 size={16} className="shrink-0" /> I typically reply within 24 hours.</p>
             </div>
             <div className="contact-details min-w-0">
               <Mail size={24} strokeWidth={1.5} className="text-accent" />
@@ -412,7 +419,7 @@ export default function Home() {
                 <a className="social-pill" href={linkedinUrl}><Linkedin size={16} /> LinkedIn</a>
                 <a className="social-pill" href={handshakeUrl}><Handshake size={16} /> Handshake</a>
                 <a className="social-pill" href="https://github.com/PremPaudel05"><Github size={16} /> GitHub</a>
-                <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Résumé PDF</a>
+                <a className="social-pill" href={resumeUrl} download="Prem-Paudel-Resume.pdf"><Download size={16} /> Resume PDF</a>
               </div>
             </div>
           </div>

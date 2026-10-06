@@ -126,15 +126,15 @@ a.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
 button.social-pill { cursor: pointer; }
 button.social-pill:hover { border-color: #bfb19d; background: #f2ece2; }
 
-/* Alternating dark and light sections, with a restrained blue accent. */
-:root { --background: #050608; --foreground: #f5f5f7; --accent: #176ba6; color-scheme: dark; }
+/* A continuous midnight palette with restrained blue accents. */
+:root { --background: #050608; --foreground: #f5f5f7; --accent: #70baff; color-scheme: dark; }
 body { background: var(--background); }
 ::selection { background: #247db866; color: inherit; }
 .portfolio-sections { width: 100%; }
-.content-card, .contact-card { border: 0; border-radius: 0; padding: 5rem max(1.5rem, calc((100% - 1104px) / 2)); background: #f5f5f7; color: #292823; color-scheme: light; }
-#education, #experience { border-top: 1px solid #e1e4e8; }
+.content-card, .contact-card { border: 0; border-radius: 0; padding: 5rem max(1.5rem, calc((100% - 1104px) / 2)); background: radial-gradient(ellipse at 24% 24%, #10273888, transparent 55%), #050608; color: #f5f5f7; color-scheme: dark; }
+.portfolio-sections > section + section { border-top: 1px solid #202c38; }
 .theme-dark { --accent: #70baff; color: #f5f5f7; color-scheme: dark; background: #050608; }
-.hero-simple { background: radial-gradient(ellipse at 24% 24%, #10273888, transparent 55%), #050608; }
+.hero-simple, .content-card, .contact-card { background: radial-gradient(ellipse at 24% 24%, #10273888, transparent 55%), #050608; }
 .theme-dark .text-stone-950, .theme-dark .text-stone-900, .theme-dark .text-stone-800, .theme-dark .section-title { color: #f5f5f7; }
 .theme-dark .text-stone-700, .theme-dark .text-stone-600 { color: #bcc3cd; }
 .theme-dark .text-stone-500 { color: #a1abb9; }
@@ -162,7 +162,25 @@ body { background: var(--background); }
 #projects .project-symbol { color: #8fcaff; border-color: #2e465b; background: #142434; }
 #projects .project-tag, #projects .status-pill { color: #c2d8ee; border-color: #304253; background: #14212e; }
 #projects img { border-color: #344454; }
-#skills .skill-card, .tool-item { background: #fff; border-color: #dfe3e8; }
+#skills .skill-card, .tool-item { background: #0f1720; border-color: #293b4d; color: #c5ceda; }
+.tool-item img[src$="github.svg"], .tool-item img[src$="nextdotjs.svg"] { filter: brightness(0) invert(1); }
+#about .bg-stone-50\/80, #education .bg-stone-50\/80, #education .bg-white { background: #0f1720; border-color: #293b4d; }
+#education .bg-stone-100 { background: #162b3e; border-color: #344454; }
+.about-quote, .experience-entry { border-color: #293b4d; }
+.experience-points { color: #bcc3cd; }
+.experience-points li::marker { color: #70baff; }
+.theme-dark .project-tag { color: #c2d8ee; border-color: #304253; background: #14212e; }
+.company-logo { background: #f5f5f7; border-color: #526173; }
+.university-logo { background: #f5f5f7; border: 1px solid #526173; border-radius: .75rem; padding: .4rem; }
+.skill-card[data-tone="blue"] { --skill-ink: #b3d8fa; --skill-tint: #172c40; --skill-border: #304d68; }
+.skill-card[data-tone="sage"] { --skill-ink: #b7dbc6; --skill-tint: #192f29; --skill-border: #345244; }
+.skill-card[data-tone="amber"] { --skill-ink: #ebd39c; --skill-tint: #302a1c; --skill-border: #524733; }
+.skill-card[data-tone="clay"] { --skill-ink: #e8bd9f; --skill-tint: #30261f; --skill-border: #554237; }
+.skill-card[data-tone="rose"] { --skill-ink: #e9bdcf; --skill-tint: #30232e; --skill-border: #553e4d; }
+.skill-card[data-tone="slate"] { --skill-ink: #c5d2e2; --skill-tint: #222d3a; --skill-border: #405064; }
+#contact { position: relative; isolation: isolate; overflow: hidden; }
+.contact-stars { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.contact-starfield { position: absolute; inset: 0; opacity: .25; background-image: radial-gradient(1px 1px at 22px 35px, #d5ecff 90%, transparent), radial-gradient(1px 1px at 130px 180px, #d5ecff 90%, transparent), radial-gradient(1px 1px at 240px 90px, #d5ecff 90%, transparent); background-size: 310px 260px; }
 #contact .contact-details { background: #0f151d; border-color: #303d4d; }
 .site-footer { background: #050608; border-top: 1px solid #29313b; }
 .site-footer .text-stone-500 { color: #a1abb9; }
