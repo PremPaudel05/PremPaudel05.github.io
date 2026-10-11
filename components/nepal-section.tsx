@@ -6,19 +6,15 @@ const stars = Array.from({ length: 80 }, (_, index) => ({
   top: `${(index * 17.371 + (index % 9) * 5.813) % 55}%`,
 }));
 
-export function NepalSection() {
+export function NepalBackground() {
   return (
-    <section className={styles["nepal-scene"]} id="nepal-scene" aria-label="Mount Everest night sky">
+    <div className={styles["nepal-scene"]} aria-hidden="true">
       <div className={styles["nepal-stars"]} aria-hidden="true">
         {stars.map((position, index) => (
           <i key={index} style={position} />
         ))}
       </div>
 
-      <div className={styles["nepal-quote"]}>
-        <blockquote>“Shoot for the moon. Even if you miss, you’ll land among the stars.”</blockquote>
-        <cite>Norman Vincent Peale</cite>
-      </div>
 
       <svg
         className={styles["nepal-range"]}
@@ -48,6 +44,15 @@ export function NepalSection() {
         <path d="M545 215 L575 236 L560 250 L538 240Z" fill="url(#np-snow)" opacity=".85" />
         <path d="M-40 440 L100 410 L200 430 L320 390 L430 440 L560 410 L700 452 L860 415 L1000 445 L1120 420 L1240 440 L1240 520 L-40 520Z" fill="#030710" />
       </svg>
-    </section>
+    </div>
+  );
+}
+
+export function NepalQuote() {
+  return (
+    <div className={styles["nepal-quote"]}>
+      <blockquote>“Shoot for the moon. Even if you miss, you’ll land among the stars.”</blockquote>
+      <cite>Norman Vincent Peale</cite>
+    </div>
   );
 }
