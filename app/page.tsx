@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import { NepalSection } from "@/components/nepal-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
@@ -181,6 +182,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <NepalSection />
 
       <div className="portfolio-sections">
         <section id="about" className="content-card scroll-mt-28">
