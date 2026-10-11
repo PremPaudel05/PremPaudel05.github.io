@@ -1,0 +1,76 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        run: npm install
+
+      # The image source is stored in an Actions secret, never committed to the public repo.
+      # The resulting web image is intentionally public on the published Pages website.
+      - name: Restore portfolio photo during build
+        shell: bash
+        env:
+          PROFILE_IMAGE_BASE64: ${{ secrets.PROFILE_IMAGE_BASE64 }}
+        run: |
+          if [ -n "$PROFILE_IMAGE_BASE64" ]; then
+            mkdir -p public/images
+            printf '%s' "$PROFILE_IMAGE_BASE64" | base64 --decode > public/images/prem-graduation.webp
+            test -s public/images/prem-graduation.webp
+            file --mime-type public/images/prem-graduation.webp | grep -q "image/webp"
+            echo "Optimized portrait restored from Actions secret successfully."
+            printf '%s\n' "NEXT_PUBLIC_PROFILE_PHOTO_URL=/images/prem-graduation.webp" >> "$GITHUB_ENV"
+          elif [ -f public/images/prem-graduation.jpg ]; then
+            echo "Keeping existing public photo until image secret has been configured."
+          else
+            echo "::error::Set repository secret PROFILE_IMAGE_BASE64 before removing the original image file."
+            exit 1
+          fi
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Disable Jekyll
+        run: touch out/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

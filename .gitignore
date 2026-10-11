@@ -1,0 +1,7 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+# Do not commit personal portrait source files
+public/images/prem-graduation.jpg
+public/images/prem-graduation.webp
