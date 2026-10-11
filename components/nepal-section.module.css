@@ -1,11 +1,28 @@
 .nepal-scene {
-  position: relative;
-  min-height: 100vh;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
+  pointer-events: none;
   isolation: isolate;
   background:
     radial-gradient(60% 55% at 62% 62%, rgba(90, 169, 255, .28), transparent 70%),
     linear-gradient(180deg, #050b14 0%, #0a1a30 55%, #173250 100%);
+}
+
+/* Keep the scenic backdrop behind hero copy without changing any SVG paths. */
+.nepal-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(5, 11, 20, .50), transparent 82%);
+}
+
+.nepal-scene,
+.nepal-scene * {
+  animation: none !important;
+  transition: none !important;
 }
 
 .nepal-stars {
@@ -35,21 +52,22 @@
 .nepal-quote {
   position: relative;
   z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: clamp(56px, 13vh, 150px) 24px 0;
+  max-width: 1104px;
+  margin: clamp(48px, 9vh, 108px) auto 0;
+  padding: 0 24px 0;
 }
 
 .nepal-quote blockquote {
   margin: 0;
-  max-width: 14em;
+  max-width: 20em;
   font-family: "Instrument Serif", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(30px, 4.8vw, 60px);
+  font-size: clamp(27px, 3vw, 40px);
   line-height: 1.12;
   letter-spacing: -.01em;
   color: rgba(232, 238, 247, .94);
+  text-wrap: balance;
 }
 
 .nepal-quote cite {
@@ -73,16 +91,13 @@
 }
 
 @media (max-width: 600px) {
-  .nepal-scene {
-    min-height: 100svh;
-  }
-
   .nepal-quote {
-    padding: clamp(56px, 11vh, 100px) 24px 0;
+    margin-top: 60px;
+    padding: 0 24px;
   }
 
   .nepal-quote blockquote {
-    font-size: clamp(30px, 7vw, 42px);
+    font-size: clamp(27px, 7vw, 38px);
     max-width: 14em;
   }
 
