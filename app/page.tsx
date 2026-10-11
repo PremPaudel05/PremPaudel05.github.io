@@ -406,7 +406,6 @@ export default function Home() {
               <p className="section-label">Contact</p>
               <h2 className="section-title text-4xl sm:text-5xl">Let&apos;s connect.</h2>
               <p className="mt-5 max-w-lg text-sm leading-7 text-stone-600">
-                <strong className="font-semibold text-stone-100">Let&apos;s start a conversation.</strong>{" "}
                 Whether you want to collaborate on a project, talk about systems and technology,
                 or just connect, I&apos;d love to hear from you and learn more about what you&apos;re building.
               </p>
