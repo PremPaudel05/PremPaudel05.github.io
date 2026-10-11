@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
-import { NepalSection } from "@/components/nepal-section";
+import { NepalBackground, NepalQuote } from "@/components/nepal-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
@@ -130,8 +130,9 @@ export default function Home() {
       <SectionNavigation />
       <ScrollReveal />
 
-      <section id="main-content" className="hero-simple theme-dark pb-16 pt-32 sm:pb-24 sm:pt-40">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
+      <section id="main-content" className="hero-simple theme-dark relative isolate overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-40">
+        <NepalBackground />
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
           <div className="min-w-0">
             <div className="mb-7 flex items-center gap-4">
               <p className="text-sm font-medium tracking-[0.16em] text-stone-500">My Portfolio</p>
@@ -181,9 +182,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <NepalQuote />
       </section>
-
-      <NepalSection />
 
       <div className="portfolio-sections">
         <section id="about" className="content-card scroll-mt-28">
