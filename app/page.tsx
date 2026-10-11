@@ -132,6 +132,17 @@ export default function Home() {
 
       <section id="main-content" className="hero-simple theme-dark relative isolate overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-40">
         <NepalBackground />
+        <ShootingStars
+          className="hero-shooting-stars"
+          starColor="#e3f2ff"
+          trailColor="#70baff"
+          minSpeed={7}
+          maxSpeed={11}
+          minDelay={2400}
+          maxDelay={5200}
+          starWidth={16}
+          starHeight={2}
+        />
         <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
           <div className="min-w-0">
             <div className="mb-7 flex items-center gap-4">
@@ -170,14 +181,14 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-w-sm justify-self-center md:justify-self-end">
-            <div className="portrait-frame rounded-[2rem] border border-stone-200 bg-white p-2 shadow-[0_18px_48px_-30px_rgba(15,23,42,0.3)]">
+            <div className="portrait-frame">
               <img
                 src={profilePhotoUrl}
                 alt="Prem Paudel wearing his graduation cap"
                 width={1254}
                 height={1254}
                 fetchPriority="high"
-                className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
+                className="portrait-image aspect-[4/5] w-full object-cover object-top"
               />
             </div>
           </div>

@@ -40,18 +40,30 @@ export function GlowCard({
   const { base, spread } = glowColorMap[glowColor];
 
   useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let frame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
     const syncPointer = (event: PointerEvent) => {
-      if (!cardRef.current) return;
-
-      const { clientX: x, clientY: y } = event;
-      cardRef.current.style.setProperty("--x", x.toFixed(2));
-      cardRef.current.style.setProperty("--xp", (x / window.innerWidth).toFixed(2));
-      cardRef.current.style.setProperty("--y", y.toFixed(2));
-      cardRef.current.style.setProperty("--yp", (y / window.innerHeight).toFixed(2));
+      if (motion.matches || event.pointerType === "touch") return;
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const bounds = card.getBoundingClientRect();
+        card.style.setProperty("--x", (pointerX - bounds.left).toFixed(2));
+        card.style.setProperty("--y", (pointerY - bounds.top).toFixed(2));
+        card.style.setProperty("--xp", (pointerX / window.innerWidth).toFixed(2));
+      });
     };
-
-    document.addEventListener("pointermove", syncPointer, { passive: true });
-    return () => document.removeEventListener("pointermove", syncPointer);
+    card.addEventListener("pointermove", syncPointer, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      card.removeEventListener("pointermove", syncPointer);
+    };
   }, []);
 
   const style = {
@@ -77,7 +89,6 @@ export function GlowCard({
         style={{
           background:
             "radial-gradient(var(--spotlight-size) var(--spotlight-size) at calc(var(--x, 0) * 1px) calc(var(--y, 0) * 1px), hsl(var(--hue) 25% 70% / 0.12), transparent 64%)",
-          backgroundAttachment: "fixed",
         }}
       />
       <div className="relative z-10 h-full">{children}</div>
