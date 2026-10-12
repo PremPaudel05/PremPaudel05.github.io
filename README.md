@@ -1,4 +1,4 @@
-# Mountain Night Portfolio
+# Portfolio
 
 A mountain-inspired portfolio with a night sky, shooting stars, and smooth scroll animations. Built by **Prem Paudel** with Next.js, TypeScript, Tailwind CSS, and Motion.
 
