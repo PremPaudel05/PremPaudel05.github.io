@@ -30,28 +30,35 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      # The image source is stored in an Actions secret, never committed to the public repo.
-      # The resulting web image is intentionally public on the published Pages website.
-      - name: Restore portfolio photo during build
+      # Portraits are deployment assets, not files distributed with the template.
+      # Copies use the generic placeholder unless their owner supplies this secret.
+      - name: Prepare optional portrait for deployment
         shell: bash
         env:
-          PROFILE_IMAGE_BASE64: ${{ secrets.PROFILE_IMAGE_BASE64 }}
+          PORTFOLIO_PORTRAIT_BASE64: ${{ secrets.PORTFOLIO_PORTRAIT_BASE64 }}
         run: |
-          if [ -n "$PROFILE_IMAGE_BASE64" ]; then
-            mkdir -p public/images
-            printf '%s' "$PROFILE_IMAGE_BASE64" | base64 --decode > public/images/prem-graduation.webp
-            test -s public/images/prem-graduation.webp
-            file --mime-type public/images/prem-graduation.webp | grep -q "image/webp"
-            echo "Optimized portrait restored from Actions secret successfully."
-            printf '%s\n' "NEXT_PUBLIC_PROFILE_PHOTO_URL=/images/prem-graduation.webp" >> "$GITHUB_ENV"
-          elif [ -f public/images/prem-graduation.jpg ]; then
-            echo "Keeping existing public photo until image secret has been configured."
+          mkdir -p public/images
+          portrait_path="public/images/portfolio-portrait.webp"
+          if [ -n "$PORTFOLIO_PORTRAIT_BASE64" ]; then
+            printf '%s' "$PORTFOLIO_PORTRAIT_BASE64" | base64 --decode > "$portrait_path"
+          elif [ "$GITHUB_REPOSITORY" = "PremPaudel05/PremPaudel05.github.io" ]; then
+            # Preserve the original site's already-public photo without putting
+            # its bytes in the current repository or new template copies.
+            curl --fail --silent --show-error --location --retry 2 \
+              "https://prempaudel05.github.io/images/portfolio-portrait.webp" \
+              --output "$portrait_path" || \
+            curl --fail --silent --show-error --location --retry 2 \
+              "https://prempaudel05.github.io/images/prem-portrait-cutout.webp" \
+              --output "$portrait_path"
           else
-            echo "::error::Set repository secret PROFILE_IMAGE_BASE64 before removing the original image file."
-            exit 1
+            echo "Using the template portrait placeholder."
+            exit 0
           fi
+          test -s "$portrait_path"
+          file --mime-type "$portrait_path" | grep -q "image/webp"
+          printf '%s\n' "NEXT_PUBLIC_PORTRAIT_PATH=/images/portfolio-portrait.webp" >> "$GITHUB_ENV"
 
       - name: Build static site
         run: npm run build

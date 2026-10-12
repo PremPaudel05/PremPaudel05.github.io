@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/asset-path";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
@@ -31,7 +32,7 @@ import weaverLogo from "@/public/images/weaver-fab-finish.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
 
 const email = "Prempaudel5b@gmail.com";
-const resumeUrl = "/documents/Prem-Paudel-Resume.pdf";
+const resumeUrl = assetPath("/documents/Prem-Paudel-Resume.pdf");
 
 const handshakeUrl = "https://app.joinhandshake.com/profiles/6a5pq9";
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
@@ -383,7 +384,7 @@ export default function Home() {
               ["Next.js", "nextdotjs"], ["GitHub", "github"], ["Visual Studio Code", "vscode"],
             ].map(([name, icon]) => (
               <div className="tool-item" key={name}>
-                <img src={`/icons/${icon}.svg`} width={26} height={26} alt="" />
+                <img src={assetPath(`/icons/${icon}.svg`)} width={26} height={26} alt="" />
                 <span>{name}</span>
               </div>
             ))}

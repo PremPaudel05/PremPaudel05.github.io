@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { assetPath } from "@/lib/asset-path";
+
+const portraitPath = process.env.NEXT_PUBLIC_PORTRAIT_PATH;
 
 export function HeroPortrait() {
   const stageRef = useRef<HTMLDivElement>(null);
@@ -78,8 +81,8 @@ export function HeroPortrait() {
       <div className="portrait-orbits" aria-hidden="true" />
       <div ref={portraitRef} className="hero-portrait-motion">
         <img
-          src="/images/prem-portrait-cutout.webp"
-          alt="Prem Paudel wearing his graduation cap"
+          src={assetPath((portraitPath || "/images/portrait-placeholder.svg") as `/${string}`)}
+          alt={portraitPath ? "Portfolio portrait" : "Placeholder for your portfolio portrait"}
           width={1254}
           height={1254}
           fetchPriority="high"

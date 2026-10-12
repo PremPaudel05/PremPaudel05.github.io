@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" fill="none">
+  <title>Replace with your portrait</title>
+  <circle cx="320" cy="220" r="108" fill="#8DB8DA"/>
+  <path d="M112 640V514C112 408 194 348 320 348S528 408 528 514V640Z" fill="#4A769E"/>
+  <path d="M254 362L320 448L386 362" stroke="#C1DDF3" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

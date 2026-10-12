@@ -5,3 +5,6 @@ out/
 # Do not commit personal portrait source files
 public/images/prem-graduation.jpg
 public/images/prem-graduation.webp
+public/images/prem-portrait-cutout.webp
+public/images/portfolio-portrait.webp
+.env*.local

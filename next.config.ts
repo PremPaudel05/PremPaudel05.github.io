@@ -1,17 +1,19 @@
 import type { NextConfig } from "next";
 
-const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const [repositoryOwner, repositoryName] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
-const isUserSite = repositoryName?.toLowerCase() === "prempaudel05.github.io";
+const isUserSite = repositoryName?.toLowerCase() === `${repositoryOwner?.toLowerCase()}.github.io`;
 
-const basePath =
-  isGitHubActions && repositoryName && !isUserSite
-    ? `/${repositoryName}`
-    : "";
+// Support any owner's username.github.io site and ordinary project repositories.
+// An explicit empty NEXT_PUBLIC_BASE_PATH also supports root-level custom domains.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (
+  isGitHubActions && repositoryName && !isUserSite ? `/${repositoryName}` : ""
+);
 
 const nextConfig: NextConfig = {
   output: "export",
   basePath: basePath || undefined,
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   trailingSlash: true,
 };
 
