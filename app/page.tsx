@@ -79,7 +79,7 @@ const skillGroups = [
     title: "Programming & Web",
     tone: "blue",
     icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    skills: ["Python (Basic)", "JavaScript (Basic)", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Databases & Systems",
