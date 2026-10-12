@@ -1,16 +1,22 @@
 # Mountain Night Portfolio
 
-Prem Paudel's portfolio, shared as a starting point for your own. Built with **Next.js, TypeScript, Tailwind CSS, Motion, and shadcn-style components**.
+A mountain-inspired portfolio with a night sky, shooting stars, and smooth scroll animations. Built by **Prem Paudel** with Next.js, TypeScript, Tailwind CSS, and Motion.
 
-[View the live example](https://prempaudel05.github.io/) · [Download current starter (ZIP)](https://github.com/PremPaudel05/PremPaudel05.github.io/archive/refs/heads/main.zip) · [Customization guide](#make-it-yours)
+[Live demo](https://prempaudel05.github.io/) · [Download ZIP](https://github.com/PremPaudel05/PremPaudel05.github.io/archive/refs/heads/main.zip) · [Reuse permission](TEMPLATE_USAGE.md)
 
-## Use it for your own portfolio
+## Features
 
-You can reuse and customize the original code for your own portfolio. See [Template usage](TEMPLATE_USAGE.md) for the reuse permission and which personal assets to replace.
+- A portrait that slides behind the mountains as you scroll.
+- Animated quotes and colorful text highlights.
+- About, education, experience, projects, skills, and contact sections.
+- Mobile-friendly layouts and reduced-motion support.
+- GitHub Pages deployment included.
 
-1. Click **Use this template → Create a new repository** at the top of the repository when that button is available. If it is not available, use **Code → Download ZIP** for the current files; do not fork if you want a copy without the original Git history.
-2. Name the copy **YOUR-USERNAME.github.io** to publish at `https://YOUR-USERNAME.github.io/`, or choose another name such as **portfolio** to publish at `https://YOUR-USERNAME.github.io/portfolio/`.
-3. Clone **your copy**, install dependencies, and customize the content before publishing.
+## 1. Get started
+
+Use **Use this template → Create a new repository** if the button is available. Otherwise, download the ZIP, unzip it, and upload the files to a new repository.
+
+Clone your new repository and run these commands. You'll need **Node.js 20 or newer**.
 
 ```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
@@ -19,86 +25,87 @@ npm ci
 npm run dev
 ```
 
-Use Node.js 20 or newer and open [localhost:3000](http://localhost:3000). You do not need API keys, a database, or Prem's GitHub secrets to run or build the project.
+Open [localhost:3000](http://localhost:3000) to see your portfolio. No API keys or database needed.
 
-## What's included
+## 2. Make it yours
 
-- A navy night sky, SVG mountains, and shooting stars.
-- A portrait that moves behind the foreground mountain as visitors scroll.
-- A word-by-word quote reveal and colorful text highlights.
-- About, education, experience, project, skill, and contact sections.
-- Responsive layouts, keyboard focus styles, and reduced-motion support.
-- Static export and a GitHub Pages deployment workflow.
+Replace the example information and assets with your own before publishing.
 
-## Make it yours
-
-This repository also powers Prem's live portfolio, so the example content is real. Replace it with your own information rather than publishing the example unchanged.
-
-| What to customize | Where to edit |
+| Change | Edit here |
 | --- | --- |
-| Name, introduction, About, education, experience, projects, skills, and contact links | `app/page.tsx` |
-| Browser title and search description | `app/layout.tsx` |
-| Colors, fonts, layout, portrait outline, and general styling | `app/globals.css` |
-| Mountain illustration, hero quote, and attribution | `components/nepal-section.tsx` |
-| Quote layout and mountain styling | `components/nepal-section.module.css` |
-| Portrait image path, alternative text, and scroll behavior | `components/ui/hero-portrait.tsx` |
-| Project and organization images | `public/images/` and their imports in `app/page.tsx` |
-| Resume PDF and download name | `public/documents/` and `resumeUrl` / `download` in `app/page.tsx` |
-| Reusable UI components | `components/ui/` |
+| Name, bio, experience, projects, skills, and contact links | `app/page.tsx` |
+| Browser title and description | `app/layout.tsx` |
+| Colors, fonts, spacing, and portrait outline | `app/globals.css` |
+| Hero quote and mountains | `components/nepal-section.tsx` |
+| Quote and mountain styling | `components/nepal-section.module.css` |
+| Portrait and its scroll animation | `components/ui/hero-portrait.tsx` |
+| Photos and project images | `public/images/` |
+| Resume PDF | `public/documents/` |
 
-### Add your photo and resume
+### Add your photo
 
-New copies start with a generic portrait placeholder. Prem's portrait is not included in the current template files.
+New copies use a placeholder. To replace it:
 
-1. To include your own photo in your source, add it to `public/images/`, for example `portrait.webp`, and change the fallback path string in `components/ui/hero-portrait.tsx` from `"/images/portrait-placeholder.svg"` to `"/images/portrait.webp"`. Update the alternative text and dimensions.
-2. To keep your photo's bytes out of the repository, save a WebP image as the Actions secret **PORTFOLIO_PORTRAIT_BASE64**. The workflow decodes it only while building the published site. A transparent cutout works best with the mountain effect.
-3. For local development with a deployment-only photo, place it at the ignored path `public/images/portfolio-portrait.webp` and set `NEXT_PUBLIC_PORTRAIT_PATH=/images/portfolio-portrait.webp` in your uncommitted `.env.local` file.
-4. Replace the example PDF with your resume, then update `resumeUrl` and the download filename in `app/page.tsx`.
-5. Replace the project screenshots and company/university logos with assets appropriate to your own background.
+1. Add your image as `public/images/portrait.webp`. A transparent cutout works best.
+2. In `components/ui/hero-portrait.tsx`, replace `/images/portrait-placeholder.svg` with `/images/portrait.webp`.
+3. Update the image's alternative text and dimensions to match your photo.
 
-A deployment-only photo is excluded from the current source/template files, **not private from website visitors**. Any image shown on a public website can be downloaded. Earlier versions of the original repository included a cutout; deleting a current file does not erase earlier Git history. New repositories created with **Use this template** start from the current files, while forks retain history.
+### Add your resume
 
-For Prem's original site only, the workflow can preserve the image from the previous public deployment if no new portrait secret is configured. Other owners receive the placeholder by default. Configuring the portrait secret provides a backup independent of the previous deployment.
+Put your PDF in `public/documents/`, then update `resumeUrl` and the download filename in `app/page.tsx`.
 
-For other files added to `public/`, use `assetPath("/your-file.ext")` from `@/lib/asset-path`. This keeps links working both at the domain root and under a repository subpath. Existing imported images are handled by Next.js.
+### Before publishing
 
-### Personalization checklist
+- [ ] Replace all example personal details, links, screenshots, and logos.
+- [ ] Update your photo, resume, browser title, and description.
+- [ ] Check the mobile layout, navigation, contact links, and resume download.
 
-- [ ] Replace Prem's name, bio, education, experience, and project descriptions.
-- [ ] Update email, GitHub, LinkedIn, Handshake, and location everywhere they appear.
-- [ ] Replace the portrait, its alternative text, and the resume PDF/download filename.
-- [ ] Update the browser title, description, quote, and attribution as needed.
-- [ ] Remove or replace example company logos and project screenshots.
-- [ ] Check contact links, resume downloads, navigation, and the mobile layout.
-- [ ] Rewrite this README for your own project, retaining the template usage notice.
+## 3. Publish on GitHub Pages
 
-## Publish with GitHub Pages
+1. Open your repository's **Settings → Pages**.
+2. Set **Source** to **GitHub Actions**.
+3. Push your changes to `main`.
+4. Check the deployment in the **Actions** tab. Your website URL appears in **Settings → Pages** when it's ready.
 
-1. In **your copied repository**, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-2. Commit and push your customized files to `main`.
-3. Open **Actions → Deploy portfolio to GitHub Pages** and check the build and deployment. You can also choose **Run workflow** after enabling Pages.
-4. GitHub displays the published URL in **Settings → Pages**.
+Your repository name determines the address:
 
-The configuration automatically supports any owner's `username.github.io` repository and ordinary project repository names. No photo secret is required for template copies; they build with the generic placeholder. The optional `PORTFOLIO_PORTRAIT_BASE64` secret is only for owners who want a deployment-only photo.
+| Repository name | Website address |
+| --- | --- |
+| `YOUR-USERNAME.github.io` | `https://YOUR-USERNAME.github.io/` |
+| `portfolio` | `https://YOUR-USERNAME.github.io/portfolio/` |
 
-To preview a static build locally:
+Both formats are supported automatically.
 
-```bash
-npm run build
+## Optional setup
+
+<details>
+<summary>Keep your photo out of the repository</summary>
+
+Store your WebP image encoded as Base64 in a GitHub Actions secret named `PORTFOLIO_PORTRAIT_BASE64`. The deployment workflow adds it during the build.
+
+For local development, place the image at `public/images/portfolio-portrait.webp` and add this line to `.env.local`. Both paths are ignored by Git:
+
+```env
+NEXT_PUBLIC_PORTRAIT_PATH=/images/portfolio-portrait.webp
 ```
 
-The generated website is in `out/`. Because this is a static export, `npm start` is not the static preview command; use a static file server pointed at `out/`, or use `npm run dev` while editing.
+Images displayed on a public website can still be downloaded. Prem's portrait is excluded from the current template files, but an earlier version remains in Git history. Use the template button or ZIP for a fresh copy; forks include that history.
 
-For a custom domain hosted at its root, set `NEXT_PUBLIC_BASE_PATH` to an empty string in the build environment. For other hosting services, the default local build uses the root path unless that variable is explicitly set.
+</details>
 
-## Contact behavior
+<details>
+<summary>Build, file paths, and custom domains</summary>
 
-The contact section uses an email link and a Copy Email button. No form backend or external form activation is required.
+Run `npm run build` to create the static site in `out/`. Use a static file server to preview that folder, or `npm run dev` while editing.
+
+For new files in `public/`, use `assetPath("/your-file.ext")` from `@/lib/asset-path` when linking to them. This keeps links working under repository subpaths.
+
+For a custom domain hosted at its root, set `NEXT_PUBLIC_BASE_PATH` to an empty string in the build environment.
+
+</details>
 
 ## Reuse and credits
 
-Read [TEMPLATE_USAGE.md](TEMPLATE_USAGE.md) before reusing personal or third-party assets. Tool icon notices are in [public/icons/NOTICE.md](public/icons/NOTICE.md). A link back to the original portfolio is appreciated, but not required for your portfolio.
+You're welcome to adapt the original code for your personal portfolio. Keep [TEMPLATE_USAGE.md](TEMPLATE_USAGE.md) with your copy and replace Prem's personal content with your own. Website credit is appreciated but optional.
 
-### For the original repository owner
-
-To enable GitHub's **Use this template** button, open **Settings → General** and select **Template repository**. This setting is separate from the README and workflow files. [GitHub's instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
+Third-party assets keep their own licenses. See the [icon notices](public/icons/NOTICE.md).
