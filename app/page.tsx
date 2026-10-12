@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import { HeroPortrait } from "@/components/ui/hero-portrait";
 import { NepalBackground, NepalQuote } from "@/components/nepal-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
@@ -27,11 +28,6 @@ import { GlowCard } from "@/components/ui/spotlight-card";
 import samsLogo from "@/public/images/sams-club.webp";
 import weaverLogo from "@/public/images/weaver-fab-finish.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
-
-// During migration the existing image remains as a fallback, so the live site never loses its portrait.
-// On GitHub Pages, NEXT_PUBLIC_PROFILE_PHOTO_URL is set at build time from the repository variable PROFILE_PHOTO_URL.
-const profilePhotoUrl =
-  process.env.NEXT_PUBLIC_PROFILE_PHOTO_URL?.trim() || "/images/prem-graduation.jpg";
 
 const email = "Prempaudel5b@gmail.com";
 const resumeUrl = "/documents/Prem-Paudel-Resume.pdf";
@@ -130,7 +126,7 @@ export default function Home() {
       <SectionNavigation />
       <ScrollReveal />
 
-      <section id="main-content" className="hero-simple theme-dark relative isolate overflow-hidden pb-16 pt-32 sm:pb-24 sm:pt-40">
+      <section id="main-content" className="hero-simple theme-dark relative isolate overflow-hidden pt-32 sm:pt-40">
         <NepalBackground />
         <ShootingStars
           className="hero-shooting-stars"
@@ -143,8 +139,9 @@ export default function Home() {
           starWidth={16}
           starHeight={2}
         />
-        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
-          <div className="min-w-0">
+        <div className="hero-stage">
+        <div className="hero-grid relative mx-auto grid max-w-6xl items-center gap-8 px-6 md:grid-cols-[1.35fr_0.85fr] md:gap-10 lg:gap-16">
+          <div className="hero-copy min-w-0">
             <div className="mb-7 flex items-center gap-4">
               <p className="text-sm font-medium tracking-[0.16em] text-stone-500">My Portfolio</p>
               <span aria-hidden="true" className="h-px w-12 bg-stone-100" />
@@ -180,18 +177,11 @@ export default function Home() {
               <span className="social-pill"><MapPin size={16} /> Akron, Ohio</span>
             </div>
           </div>
-          <div className="w-full max-w-sm justify-self-center md:justify-self-end">
-            <div className="portrait-frame">
-              <img
-                src={profilePhotoUrl}
-                alt="Prem Paudel wearing his graduation cap"
-                width={1254}
-                height={1254}
-                fetchPriority="high"
-                className="portrait-image aspect-[4/5] w-full object-cover object-top"
-              />
-            </div>
-          </div>
+          <HeroPortrait />
+        </div>
+        <svg className="hero-foreground" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 65 L95 24 L245 92 L410 42 L600 108 L815 50 L1000 98 L1160 56 L1200 64 V140 H0Z" fill="#030710" />
+        </svg>
         </div>
         <NepalQuote />
       </section>
