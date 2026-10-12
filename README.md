@@ -1,6 +1,6 @@
 # Portfolio
 
-A mountain-inspired portfolio with a night sky, shooting stars, and smooth scroll animations. Built by **Prem Paudel** with Next.js, TypeScript, Tailwind CSS, and Motion.
+A mount everest-inspired portfolio with a night sky, shooting stars, and smooth scroll animations. Built by **Prem Paudel** with Next.js, TypeScript, Tailwind CSS, and Motion.
 
 [Live demo](https://prempaudel05.github.io/) · [Download ZIP](https://github.com/PremPaudel05/PremPaudel05.github.io/archive/refs/heads/main.zip) · [Reuse permission](TEMPLATE_USAGE.md)
 
