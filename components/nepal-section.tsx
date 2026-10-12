@@ -1,3 +1,4 @@
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import styles from "./nepal-section.module.css";
 
 // Fixed positions render the same night sky on every visit with no scripts or animation.
@@ -51,7 +52,9 @@ export function NepalBackground() {
 export function NepalQuote() {
   return (
     <div className={styles["nepal-quote"]}>
-      <blockquote>“Shoot for the moon. Even if you miss, you’ll land among the stars.”</blockquote>
+      <TextGenerateEffect as="blockquote" staggerDuration={0.12} transition={{ duration: 0.35 }} filter={false}>
+        “Shoot for the moon. Even if you miss, you’ll land among the stars.”
+      </TextGenerateEffect>
       <cite>Norman Vincent Peale</cite>
     </div>
   );

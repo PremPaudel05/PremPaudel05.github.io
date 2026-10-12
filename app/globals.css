@@ -1,15 +1,18 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
   color-scheme: light;
   --background: #f7f6f2;
   --foreground: #292823;
   --accent: #8a6245;
+  --accent-green: #c5f83a;
 }
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-green: var(--accent-green);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: #46617d #080f19; }
@@ -239,3 +242,10 @@ body { background: var(--background); }
   @keyframes hero-enter { from { opacity: 0; translate: 0 24px; } to { opacity: 1; translate: none; } }
 }
 @media print { [data-reveal] { opacity: 1 !important; translate: none !important; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .text-generate-word { opacity: 1 !important; filter: none !important; }
+}
+@media print {
+  .text-generate-word { opacity: 1 !important; filter: none !important; }
+}

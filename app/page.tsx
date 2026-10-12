@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
+import { HighlightText } from "@/components/ui/highlight-text";
 import { HeroPortrait } from "@/components/ui/hero-portrait";
 import { NepalBackground, NepalQuote } from "@/components/nepal-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -195,24 +196,29 @@ export default function Home() {
           <div className="mt-7 grid gap-7 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
             <div className="text-base leading-8 text-stone-600">
               <p>
-                I&apos;m studying Information Systems Management at the University of Akron
-                because I like sitting right between how technology is built and how people
-                actually use it. While I enjoy getting my hands dirty with web development
-                and data analysis, my favorite part of any project is the translation work:
-                figuring out what a team really needs, untangling messy workflows, and
-                organizing the steps to get things done.
+                I&apos;m studying Information Systems Management at the University of Akron,
+                and I&apos;m most curious about where <HighlightText variant="cyan">people and technology</HighlightText> meet.
               </p>
               <p className="mt-4">
-                I&apos;m at my best when there&apos;s a clear process, shared accountability,
-                and a team that communicates openly.
+                Give me a website to improve, a workflow to untangle, or an idea to test,
+                and I&apos;m ready to dig in. I enjoy web development and data analysis,
+                but my favorite part is <HighlightText variant="yellow">making things work</HighlightText> for the people using them.
+              </p>
+              <p className="mt-4">
+                I like asking questions, figuring out the next step, and building with a team.
+                Clear communication, shared ownership, and a little <HighlightText variant="pink">curiosity</HighlightText> go a long way.
               </p>
             </div>
             <div className="self-start rounded-xl border border-stone-200 bg-stone-50/80 p-6">
               <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">Where I want to contribute</h3>
               <p className="mt-3 text-sm leading-7 text-stone-600">
-                I&apos;m looking for roles in business analysis, IT project coordination,
-                or information systems. I want to join a structured team where I can help
-                keep complex projects on track, build dependable tools, and grow into a leadership role.
+                I&apos;m interested in business analysis, <HighlightText variant="lime">IT project coordination</HighlightText>,
+                and information systems.
+              </p>
+              <p className="mt-4 text-sm leading-7 text-stone-600">
+                I want to help a team turn a good idea into a clear plan, keep projects moving,
+                and build tools people can count on. Along the way, I&apos;m learning what it
+                takes to become a thoughtful leader.
               </p>
             </div>
           </div>
