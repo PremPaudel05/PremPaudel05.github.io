@@ -28,7 +28,6 @@ import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import samsLogo from "@/public/images/sams-club.webp";
-import weaverLogo from "@/public/images/weaver-fab-finish.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
 
 const email = "Prempaudel5b@gmail.com";
@@ -299,24 +298,6 @@ export default function Home() {
                   <li>Helped customers with product questions and communicated clearly with teammates to keep the department running smoothly.</li>
                 </ul>
                 <div className="mt-5 flex flex-wrap gap-2"><span className="project-tag">Team leadership</span><span className="project-tag">Inventory management</span><span className="project-tag">Customer service</span></div>
-              </div>
-            </article>
-            <article className="experience-entry">
-              <div className="company-logo"><img src={weaverLogo.src} width={weaverLogo.width} height={weaverLogo.height} alt="Weaver Precision Fabrication & Finishing logo" loading="lazy" /></div>
-              <div className="min-w-0">
-                <div className="flex flex-col justify-between gap-2 sm:flex-row">
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-stone-900">Weaver Fab &amp; Finish</h3>
-                    <p className="mt-1 text-sm font-medium text-accent">Powder Coating</p>
-                  </div>
-                  <p className="text-xs font-medium text-stone-500">June 2023 — August 2023</p>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-stone-600">
-                  Operated powder coating equipment, inspected finished parts for quality,
-                  and assembled components. Worked with teammates to meet production goals
-                  and deadlines while following safety procedures.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2"><span className="project-tag">Quality control</span><span className="project-tag">Teamwork</span><span className="project-tag">Attention to detail</span></div>
               </div>
             </article>
           </div>
