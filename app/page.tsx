@@ -80,7 +80,7 @@ const skillGroups = [
     title: "Programming & Web",
     tone: "blue",
     icon: Code2,
-    skills: ["Python (Basic)", "JavaScript (Basic)", "TypeScript (Basic)", "React (Basic)", "Next.js (Basic)", "Tailwind CSS (Basic)"],
+    skills: ["Python", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "Databases & Systems",
@@ -382,8 +382,8 @@ export default function Home() {
 
           <div className="tool-strip" aria-label="Selected tools and development environment">
             {[
-              ["Python (Basic)", "python"], ["TypeScript (Basic)", "typescript"], ["React (Basic)", "react"],
-              ["Next.js (Basic)", "nextdotjs"], ["GitHub", "github"], ["Visual Studio Code", "vscode"],
+              ["Python", "python"], ["TypeScript", "typescript"], ["React", "react"],
+              ["Next.js", "nextdotjs"], ["GitHub", "github"], ["Visual Studio Code", "vscode"],
             ].map(([name, icon]) => (
               <div className="tool-item" key={name}>
                 <img src={assetPath(`/icons/${icon}.svg`)} width={26} height={26} alt="" />
@@ -398,6 +398,9 @@ export default function Home() {
                   <span className="mini-card-icon"><Icon size={21} strokeWidth={1.6} /></span>
                   <h3 className="text-sm font-semibold text-stone-950">{title}</h3>
                 </div>
+                {title === "Programming & Web" && (
+                  <p className="mt-4 text-xs font-medium text-stone-500">Foundational knowledge</p>
+                )}
                 <div className="mt-5 flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span key={skill} className="skill-pill">{skill}</span>
