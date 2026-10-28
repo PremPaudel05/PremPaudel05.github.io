@@ -279,6 +279,28 @@ export default function Home() {
           </div>
           <div className="experience-list">
             <article className="experience-entry">
+              <div className="company-logo text-slate-800"><Code2 size={36} strokeWidth={1.5} aria-hidden="true" /></div>
+              <div className="min-w-0">
+                <div className="flex flex-col justify-between gap-2 sm:flex-row">
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-tight text-stone-900">Web Developer</h3>
+                    <p className="mt-1 text-sm font-medium text-accent">Personal Projects</p>
+                  </div>
+                  <p className="text-xs font-medium text-stone-500">Late 2025 — Present</p>
+                </div>
+                <p className="mt-4 text-sm leading-7 text-stone-600">
+                  Build and maintain personal web projects, including Voya World, DigiCard,
+                  and this portfolio, while developing my web development skills.
+                </p>
+                <ul className="experience-points">
+                  <li>Work with React, Next.js, and TypeScript to improve layouts, navigation, and mobile usability.</li>
+                  <li>Use GitHub to manage code changes and deploy website updates.</li>
+                  <li>Refine website content and features through troubleshooting, feedback, and ongoing improvements.</li>
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-2"><span className="project-tag">Web development</span><span className="project-tag">Responsive design</span><span className="project-tag">GitHub</span></div>
+              </div>
+            </article>
+            <article className="experience-entry">
               <div className="company-logo"><img src={samsLogo.src} width={samsLogo.width} height={samsLogo.height} alt="Sam’s Club logo" loading="lazy" /></div>
               <div className="min-w-0">
                 <div className="flex flex-col justify-between gap-2 sm:flex-row">
