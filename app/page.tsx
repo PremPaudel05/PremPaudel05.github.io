@@ -26,7 +26,7 @@ import { NepalBackground, NepalQuote } from "@/components/nepal-section";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
-import { GlowCard } from "@/components/ui/spotlight-card";
+import digicardPreview from "@/public/images/digicard-homepage.png";
 import samsLogo from "@/public/images/sams-club.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
 
@@ -41,7 +41,7 @@ const projects = [
     title: "Voya World",
     eyebrow: "Travel & culture platform",
     description:
-      "A web experience for discovering countries, culture, and useful destination context while I learn modern full-stack product development.",
+      "Explore countries, discover local cultures, and find useful insights for your next destination.",
     tags: ["Next.js", "TypeScript", "Product Design"],
     icon: Globe2,
     color: "neutral" as const,
@@ -53,19 +53,19 @@ const projects = [
     title: "DigiCard",
     eyebrow: "Digital networking",
     description:
-      "A mobile-first digital networking card concept designed to make sharing professional information faster and more polished.",
+      "Share your contact details, professional links, and a personal QR code through one digital networking card.",
     tags: ["React", "UI/UX", "Product Thinking"],
     icon: IdCard,
     color: "neutral" as const,
     href: "https://getmycard.vercel.app/",
-    image: null,
+    image: digicardPreview,
     status: "Building",
   },
   {
     title: "ZipShade",
     eyebrow: "Campus shadow mapping",
     description:
-      "An interactive campus mapping idea that estimates where building shadows move throughout the day using location, time, and geometry.",
+      "A campus mapping concept that shows how building shadows shift with the time of day.",
     tags: ["Mapping", "Data", "Prototyping"],
     icon: Sun,
     color: "neutral" as const,
@@ -310,46 +310,45 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-3">
+          <div className="project-gallery">
             {projects.map((project) => (
-              <GlowCard
-                key={project.title}
-                glowColor={project.color}
-                customSize
-                className="h-full min-h-[450px] w-full"
-              >
-                <article className="flex h-full flex-col" aria-label={project.title}>
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="project-symbol"><project.icon size={28} strokeWidth={1.5} /></span>
+              <article key={project.title} className="project-showcase" aria-label={project.title}>
+                <header className="project-heading">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">{project.eyebrow}</p>
+                  <div className="mt-2 flex items-center justify-between gap-3">
+                    <h3 className="text-2xl font-semibold tracking-[-0.025em] text-stone-950">{project.title}</h3>
                     <span className="status-pill">{project.status}</span>
                   </div>
-                  {project.image && (
+                </header>
+                {project.image && project.href ? (
+                  <a href={project.href} className="project-homepage" aria-label={`Visit ${project.title}`}>
                     <img
                       src={project.image.src}
                       width={project.image.width}
                       height={project.image.height}
-                      alt="Voya World homepage featuring country guides and an interactive world map"
+                      alt={`${project.title} homepage`}
+                      className={project.title === "DigiCard" ? "project-uploaded-preview" : undefined}
                       loading="lazy"
-                      className="mt-5 aspect-[1347/777] w-full rounded-lg border border-stone-200 object-contain"
                     />
+                  </a>
+                ) : (
+                  <div className="project-homepage project-coming-soon">
+                    <project.icon size={40} strokeWidth={1.25} aria-hidden="true" />
+                    <span>Concept in development</span>
+                  </div>
+                )}
+                <p className="mt-5 text-sm leading-7 text-stone-600">{project.description}</p>
+                <div className="mt-auto pt-5">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
+                  </div>
+                  {project.href && (
+                    <a href={project.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
+                      Explore project <ArrowUpRight size={16} />
+                    </a>
                   )}
-                  <div className="mt-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">{project.eyebrow}</p>
-                    <h3 className="mt-2 text-2xl font-semibold tracking-[-0.025em] text-stone-950">{project.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-stone-600">{project.description}</p>
-                  </div>
-                  <div className="mt-auto pt-6">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
-                    </div>
-                    {project.href && (
-                      <a href={project.href} className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
-                        Explore project <ArrowUpRight size={16} />
-                      </a>
-                    )}
-                  </div>
-                </article>
-              </GlowCard>
+                </div>
+              </article>
             ))}
           </div>
         </section>
