@@ -80,7 +80,7 @@ const skillGroups = [
     title: "Programming & Web",
     tone: "blue",
     icon: Code2,
-    skills: ["Python (Basic)", "JavaScript (Basic)", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    skills: ["Python (Basic)", "JavaScript (Basic)", "TypeScript (Basic)", "React (Basic)", "Next.js (Basic)", "Tailwind CSS (Basic)"],
   },
   {
     title: "Databases & Systems",
@@ -382,8 +382,8 @@ export default function Home() {
 
           <div className="tool-strip" aria-label="Selected tools and development environment">
             {[
-              ["Python", "python"], ["TypeScript", "typescript"], ["React", "react"],
-              ["Next.js", "nextdotjs"], ["GitHub", "github"], ["Visual Studio Code", "vscode"],
+              ["Python (Basic)", "python"], ["TypeScript (Basic)", "typescript"], ["React (Basic)", "react"],
+              ["Next.js (Basic)", "nextdotjs"], ["GitHub", "github"], ["Visual Studio Code", "vscode"],
             ].map(([name, icon]) => (
               <div className="tool-item" key={name}>
                 <img src={assetPath(`/icons/${icon}.svg`)} width={26} height={26} alt="" />
