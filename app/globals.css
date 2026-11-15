@@ -264,3 +264,5 @@ a.project-homepage:focus-visible { outline: 3px solid #70baff; outline-offset: 5
 @media (prefers-reduced-motion: reduce) { .project-homepage img { transition: none; } a.project-homepage:hover img { transform: none; } }
 
 .project-homepage img.project-uploaded-preview { height: 103%; }
+
+.project-homepage img.project-dashboard-preview { object-fit: contain; object-position: center; }

@@ -16,7 +16,6 @@ import {
   Download,
   Globe2,
   IdCard,
-  Sun,
 } from "lucide-react";
 import { CopyEmailButton } from "@/components/ui/copy-email-button";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -27,6 +26,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import digicardPreview from "@/public/images/digicard-homepage.png";
+import jarvisPreview from "@/public/images/jarvis-demo.webp";
 import samsLogo from "@/public/images/sams-club.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
 
@@ -62,16 +62,16 @@ const projects = [
     status: "Building",
   },
   {
-    title: "ZipShade",
-    eyebrow: "Campus shadow mapping",
+    title: "JARVIS",
+    eyebrow: "Personal AI assistant",
     description:
-      "A campus mapping concept that shows how building shadows shift with the time of day.",
-    tags: ["Mapping", "Data", "Prototyping"],
-    icon: Sun,
+      "I built JARVIS, my very own personal AI assistant, to track classes, deadlines, emails, and campus updates. It runs a local AI model, answers by voice or text, and can send emails and handle tasks for me.",
+    tags: ["Node.js", "JavaScript", "API Integration", "Automation"],
+    icon: BrainCircuit,
     color: "neutral" as const,
-    href: null,
-    image: null,
-    status: "Planned",
+    href: jarvisPreview.src,
+    image: jarvisPreview,
+    status: "Working locally",
   },
 ];
 
@@ -343,13 +343,13 @@ export default function Home() {
                   </div>
                 </header>
                 {project.image && project.href ? (
-                  <a href={project.href} className="project-homepage" aria-label={`Visit ${project.title}`}>
+                  <a href={project.href} className="project-homepage" aria-label={project.title === "JARVIS" ? "View JARVIS demo screenshot" : `Visit ${project.title}`}>
                     <img
                       src={project.image.src}
                       width={project.image.width}
                       height={project.image.height}
-                      alt={`${project.title} homepage`}
-                      className={project.title === "DigiCard" ? "project-uploaded-preview" : undefined}
+                      alt={project.title === "JARVIS" ? "JARVIS dashboard with fictional demo classes, deadlines, and messages" : `${project.title} homepage`}
+                      className={project.title === "DigiCard" ? "project-uploaded-preview" : project.title === "JARVIS" ? "project-dashboard-preview" : undefined}
                       loading="lazy"
                     />
                   </a>
@@ -366,7 +366,7 @@ export default function Home() {
                   </div>
                   {project.href && (
                     <a href={project.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
-                      Explore project <ArrowUpRight size={16} />
+                      {project.title === "JARVIS" ? "View dashboard" : "Explore project"} <ArrowUpRight size={16} />
                     </a>
                   )}
                 </div>
