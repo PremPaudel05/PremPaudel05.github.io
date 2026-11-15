@@ -65,7 +65,7 @@ const projects = [
     title: "JARVIS",
     eyebrow: "Personal AI assistant",
     description:
-      "I built JARVIS, my own personal AI assistant, with Node.js and a Qwen model running locally through Ollama. It pulls deadlines from Brightspace, email from Outlook via Power Automate, and campus events into one dashboard. I can ask questions by voice or text, get spoken replies through Fish Audio, and use it to send emails and automate routine tasks.",
+      "I built JARVIS, my personal AI assistant, to bring class schedules, deadlines, school emails, and campus events into one dashboard. It runs an AI model on my laptop, answers questions by voice or text, and can send emails and automate routine tasks.",
     tags: ["Node.js", "JavaScript", "API Integration", "Automation"],
     icon: BrainCircuit,
     color: "neutral" as const,
