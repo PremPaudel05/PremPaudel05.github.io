@@ -265,4 +265,4 @@ a.project-homepage:focus-visible { outline: 3px solid #70baff; outline-offset: 5
 
 .project-homepage img.project-uploaded-preview { height: 103%; }
 
-.project-homepage img.project-dashboard-preview { object-fit: contain; object-position: center; }
+.project-homepage img.project-dashboard-preview { object-fit: cover; object-position: center; }
