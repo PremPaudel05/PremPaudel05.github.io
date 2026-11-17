@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { assetPath } from "@/lib/asset-path";
 import {
   ArrowUpRight,
@@ -32,6 +34,7 @@ import universityLogo from "@/public/images/university-of-akron.jpg";
 
 const email = "Prempaudel5b@gmail.com";
 const resumeUrl = assetPath("/documents/Prem-Paudel-Resume.pdf");
+const jarvisDemoPath = "/videos/JARVIS_portfolio_demo.mp4";
 
 const handshakeUrl = "https://app.joinhandshake.com/profiles/6a5pq9";
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
@@ -121,6 +124,7 @@ const learningCredentials = [
 ];
 
 export default function Home() {
+  const hasJarvisDemo = existsSync(join(process.cwd(), "public", jarvisDemoPath));
   return (
     <main className="theme-dark">
       <a className="skip-link" href="#main-content">Skip to content</a>
@@ -359,6 +363,24 @@ export default function Home() {
                     <span>Concept in development</span>
                   </div>
                 )}
+                {project.title === "JARVIS" && hasJarvisDemo && (
+                  <figure className="mt-4">
+                    <figcaption id="jarvis-demo-label" className="mb-2 text-sm font-semibold text-stone-950">
+                      Demo video
+                    </figcaption>
+                    <video
+                      aria-labelledby="jarvis-demo-label"
+                      className="block w-full rounded-xl border border-white/15 bg-black"
+                      controls
+                      playsInline
+                      poster={jarvisPreview.src}
+                      preload="none"
+                    >
+                      <source src={assetPath(jarvisDemoPath)} type="video/mp4" />
+                      <a href={assetPath(jarvisDemoPath)}>Open the JARVIS demo video</a>
+                    </video>
+                  </figure>
+                )}
                 <p className="mt-5 text-sm leading-7 text-stone-600">{project.description}</p>
                 <div className="mt-auto pt-5">
                   <div className="flex flex-wrap gap-2">
@@ -366,7 +388,7 @@ export default function Home() {
                   </div>
                   {project.href && (
                     <a href={project.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
-                      {project.title === "JARVIS" ? "View dashboard" : "Explore project"} <ArrowUpRight size={16} />
+                      {project.title === "JARVIS" ? "View dashboard screenshot" : "Explore project"} <ArrowUpRight size={16} />
                     </a>
                   )}
                 </div>
