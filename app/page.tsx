@@ -34,7 +34,7 @@ import universityLogo from "@/public/images/university-of-akron.jpg";
 
 const email = "Prempaudel5b@gmail.com";
 const resumeUrl = assetPath("/documents/Prem-Paudel-Resume.pdf");
-const jarvisDemoPath = "/videos/JARVIS_portfolio_demo.mp4";
+const jarvisDemoPath = "/JARVIS_portfolio_demo.mp4";
 
 const handshakeUrl = "https://app.joinhandshake.com/profiles/6a5pq9";
 const linkedinUrl = "https://www.linkedin.com/in/prem-paudel-81a366364/";
