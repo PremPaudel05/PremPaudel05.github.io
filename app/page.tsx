@@ -29,6 +29,7 @@ import { SectionNavigation } from "@/components/ui/section-navigation";
 import voyaPreview from "@/public/images/voya-world-preview.png";
 import digicardPreview from "@/public/images/digicard-homepage.png";
 import jarvisPreview from "@/public/images/jarvis-demo.webp";
+import jarvisPoster from "@/public/images/jarvis-demo-poster.webp";
 import samsLogo from "@/public/images/sams-club.webp";
 import universityLogo from "@/public/images/university-of-akron.jpg";
 
@@ -346,7 +347,20 @@ export default function Home() {
                     <span className="status-pill">{project.status}</span>
                   </div>
                 </header>
-                {project.image && project.href ? (
+                {project.title === "JARVIS" && hasJarvisDemo ? (
+                  <div className="project-homepage project-video">
+                    <video
+                      aria-label="JARVIS demo video"
+                      controls
+                      playsInline
+                      poster={jarvisPoster.src}
+                      preload="metadata"
+                    >
+                      <source src={assetPath(jarvisDemoPath)} type="video/mp4" />
+                      <a href={assetPath(jarvisDemoPath)}>Open the JARVIS demo video</a>
+                    </video>
+                  </div>
+                ) : project.image && project.href ? (
                   <a href={project.href} className="project-homepage" aria-label={project.title === "JARVIS" ? "View JARVIS demo screenshot" : `Visit ${project.title}`}>
                     <img
                       src={project.image.src}
@@ -363,30 +377,16 @@ export default function Home() {
                     <span>Concept in development</span>
                   </div>
                 )}
-                {project.title === "JARVIS" && hasJarvisDemo && (
-                  <figure className="mt-4">
-                    <figcaption id="jarvis-demo-label" className="mb-2 text-sm font-semibold text-stone-950">
-                      Demo video
-                    </figcaption>
-                    <video
-                      aria-labelledby="jarvis-demo-label"
-                      className="block w-full rounded-xl border border-white/15 bg-black"
-                      controls
-                      playsInline
-                      poster={jarvisPreview.src}
-                      preload="none"
-                    >
-                      <source src={assetPath(jarvisDemoPath)} type="video/mp4" />
-                      <a href={assetPath(jarvisDemoPath)}>Open the JARVIS demo video</a>
-                    </video>
-                  </figure>
-                )}
                 <p className="mt-5 text-sm leading-7 text-stone-600">{project.description}</p>
                 <div className="mt-auto pt-5">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => <span key={tag} className="project-tag">{tag}</span>)}
                   </div>
-                  {project.href && (
+                  {project.title === "JARVIS" && hasJarvisDemo ? (
+                    <a href={assetPath(jarvisDemoPath)} target="_blank" rel="noopener" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
+                      Open demo video full size <ArrowUpRight size={16} />
+                    </a>
+                  ) : project.href && (
                     <a href={project.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-stone-800 hover:text-accent">
                       {project.title === "JARVIS" ? "View dashboard screenshot" : "Explore project"} <ArrowUpRight size={16} />
                     </a>
